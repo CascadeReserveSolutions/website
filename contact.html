@@ -109,8 +109,28 @@
                 }
             });
 
-            if (response.ok) {
+        if (response.ok) {
+            document.querySelector(".contact-page-content").innerHTML = `
+                <div class="thank-you-message">
+                    <p class="eyebrow">THANK YOU</p>
+
+                    <h1>We've received your message.</h1>
+
+                    <p class="contact-page-intro">
+                        Thanks for reaching out to Cascade Reserve Solutions.
+                        We'll review your request and get back to you shortly.
+                    </p>
+
+                    <p class="return-message">
+                        Returning you to the homepage...
+                    </p>
+                </div>
+            `;
+
+            setTimeout(() => {
                 window.location.href = "/";
+            }, 3000);
+        }
             } else {
                 submitButton.disabled = false;
                 submitButton.textContent = "Send Message";

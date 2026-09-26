@@ -1030,3 +1030,18 @@ footer {
     }
 
 }
+
+.thank-you-message {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.thank-you-message h1 {
+    margin-bottom: 24px;
+}
+
+.return-message {
+    margin-top: 35px;
+    color: #87939A;
+    font-size: 0.95rem;
+}
