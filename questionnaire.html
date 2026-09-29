@@ -260,7 +260,7 @@
 
         table {
             width: 100%;
-            min-width: 1040px;
+            table-layout: fixed;
             border-collapse: collapse;
             background: #fff;
         }
@@ -274,6 +274,8 @@
             font-size: .75rem;
             line-height: 1.25;
             letter-spacing: .02em;
+            white-space: normal;
+            overflow-wrap: anywhere;
         }
 
         td {
@@ -281,13 +283,13 @@
             border-bottom: 1px solid #E4EBEE;
             vertical-align: middle;
             font-size: .85rem;
+            overflow-wrap: anywhere;
         }
 
         tr:nth-child(even) td { background: #FAFCFC; }
         tr:last-child td { border-bottom: 0; }
 
         td.item-name {
-            min-width: 220px;
             color: var(--slate);
             font-weight: 700;
         }
@@ -306,13 +308,28 @@
 
         td input,
         td select {
-            min-width: 105px;
-            padding: 9px 9px;
-            font-size: .82rem;
+            min-width: 0;
+            width: 100%;
+            padding: 9px 8px;
+            font-size: .78rem;
         }
 
-        td input[type="number"] { min-width: 100px; }
-        td select { min-width: 120px; }
+        .quantity-cell {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(74px, .85fr);
+            gap: 6px;
+            align-items: center;
+        }
+
+        .quantity-cell select {
+            color: var(--muted);
+        }
+
+        .unit-note {
+            margin-top: 12px;
+            color: #7B8A92;
+            font-size: .78rem;
+        }
 
         .document-note {
             margin-top: 22px;
@@ -471,6 +488,14 @@
             }
 
             .acknowledgment { padding: 22px; }
+
+            .property-table-wrap {
+                overflow-x: auto;
+            }
+
+            table {
+                min-width: 960px;
+            }
         }
     </style>
 </head>
@@ -571,6 +596,10 @@
                                   placeholder="Describe anything unusual that may be relevant to the reserve study."></textarea>
                     </div>
                 </div>
+
+                <p class="unit-note">
+                    Units are suggested starting points only. If you are unsure of a quantity or unit, leave it blank — we can verify measurements during our review.
+                </p>
             </section>
 
             <section class="section">
@@ -649,7 +678,7 @@
                             <tr>
                                 <th>Item</th>
                                 <th>HOA?</th>
-                                <th>How many / how much</th>
+                                <th>Quantity / Unit</th>
                                 <th>About how old?</th>
                                 <th>Condition</th>
                                 <th>Replace or repair when?</th>
@@ -662,7 +691,14 @@
                             <tr>
                                 <td class="item-name">Roofs</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_roofs" aria-label="HOA responsibility for Roofs"></td>
-                                <td><input type="text" name="roofs_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="roofs_quantity" placeholder="Amount" aria-label="Quantity for roofs">
+        <select name="roofs_unit" aria-label="Unit for roofs">
+            <option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="roofs_age"></td>
                                 <td><select name="roofs_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="roofs_replace_repair_when"></td>
@@ -673,7 +709,14 @@
                             <tr>
                                 <td class="item-name">Exterior walls / siding / stucco</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_exterior_walls" aria-label="HOA responsibility for Exterior walls"></td>
-                                <td><input type="text" name="exterior_walls_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="exterior_walls_quantity" placeholder="Amount" aria-label="Quantity for exterior walls">
+        <select name="exterior_walls_unit" aria-label="Unit for exterior walls">
+            <option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="exterior_walls_age"></td>
                                 <td><select name="exterior_walls_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="exterior_walls_replace_repair_when"></td>
@@ -684,7 +727,14 @@
                             <tr>
                                 <td class="item-name">Windows and exterior doors</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_windows_doors" aria-label="HOA responsibility for Windows and exterior doors"></td>
-                                <td><input type="text" name="windows_doors_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="windows_doors_quantity" placeholder="Amount" aria-label="Quantity for windows doors">
+        <select name="windows_doors_unit" aria-label="Unit for windows doors">
+            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="windows_doors_age"></td>
                                 <td><select name="windows_doors_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="windows_doors_replace_repair_when"></td>
@@ -695,7 +745,14 @@
                             <tr>
                                 <td class="item-name">Balconies / decks / railings</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_balconies_decks_railings" aria-label="HOA responsibility for Balconies decks railings"></td>
-                                <td><input type="text" name="balconies_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="balconies_quantity" placeholder="Amount" aria-label="Quantity for balconies">
+        <select name="balconies_unit" aria-label="Unit for balconies">
+            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="balconies_age"></td>
                                 <td><select name="balconies_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="balconies_replace_repair_when"></td>
@@ -706,7 +763,14 @@
                             <tr>
                                 <td class="item-name">Building structure / foundation</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_structure_foundation" aria-label="HOA responsibility for Building structure foundation"></td>
-                                <td><input type="text" name="structure_foundation_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="structure_foundation_quantity" placeholder="Amount" aria-label="Quantity for structure foundation">
+        <select name="structure_foundation_unit" aria-label="Unit for structure foundation">
+            <option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Count">Count</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="structure_foundation_age"></td>
                                 <td><select name="structure_foundation_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="structure_foundation_replace_repair_when"></td>
@@ -717,7 +781,14 @@
                             <tr>
                                 <td class="item-name">Waterproofing / sealants</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_waterproofing" aria-label="HOA responsibility for Waterproofing sealants"></td>
-                                <td><input type="text" name="waterproofing_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="waterproofing_quantity" placeholder="Amount" aria-label="Quantity for waterproofing">
+        <select name="waterproofing_unit" aria-label="Unit for waterproofing">
+            <option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Count">Count</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="waterproofing_age"></td>
                                 <td><select name="waterproofing_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="waterproofing_replace_repair_when"></td>
@@ -728,7 +799,14 @@
                             <tr>
                                 <td class="item-name">Elevators</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_elevators" aria-label="HOA responsibility for Elevators"></td>
-                                <td><input type="text" name="elevators_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="elevators_quantity" placeholder="Amount" aria-label="Quantity for elevators">
+        <select name="elevators_unit" aria-label="Unit for elevators">
+            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="elevators_age"></td>
                                 <td><select name="elevators_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="elevators_replace_repair_when"></td>
@@ -739,7 +817,14 @@
                             <tr>
                                 <td class="item-name">Central heating / cooling</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_central_hvac" aria-label="HOA responsibility for Central heating cooling"></td>
-                                <td><input type="text" name="central_hvac_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="central_hvac_quantity" placeholder="Amount" aria-label="Quantity for central hvac">
+        <select name="central_hvac_unit" aria-label="Unit for central hvac">
+            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="central_hvac_age"></td>
                                 <td><select name="central_hvac_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="central_hvac_replace_repair_when"></td>
@@ -750,7 +835,14 @@
                             <tr>
                                 <td class="item-name">Boilers / water heaters</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_boilers_water_heaters" aria-label="HOA responsibility for Boilers water heaters"></td>
-                                <td><input type="text" name="boilers_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="boilers_quantity" placeholder="Amount" aria-label="Quantity for boilers">
+        <select name="boilers_unit" aria-label="Unit for boilers">
+            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="boilers_age"></td>
                                 <td><select name="boilers_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="boilers_replace_repair_when"></td>
@@ -761,7 +853,14 @@
                             <tr>
                                 <td class="item-name">Main plumbing / sewer lines</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_plumbing_sewer" aria-label="HOA responsibility for Main plumbing sewer lines"></td>
-                                <td><input type="text" name="plumbing_sewer_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="plumbing_sewer_quantity" placeholder="Amount" aria-label="Quantity for plumbing sewer">
+        <select name="plumbing_sewer_unit" aria-label="Unit for plumbing sewer">
+            <option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Count">Count</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="plumbing_sewer_age"></td>
                                 <td><select name="plumbing_sewer_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="plumbing_sewer_replace_repair_when"></td>
@@ -772,7 +871,14 @@
                             <tr>
                                 <td class="item-name">Electrical panels / main service</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_electrical" aria-label="HOA responsibility for Electrical panels main service"></td>
-                                <td><input type="text" name="electrical_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="electrical_quantity" placeholder="Amount" aria-label="Quantity for electrical">
+        <select name="electrical_unit" aria-label="Unit for electrical">
+            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="electrical_age"></td>
                                 <td><select name="electrical_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="electrical_replace_repair_when"></td>
@@ -783,7 +889,14 @@
                             <tr>
                                 <td class="item-name">Generator</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_generator" aria-label="HOA responsibility for Generator"></td>
-                                <td><input type="text" name="generator_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="generator_quantity" placeholder="Amount" aria-label="Quantity for generator">
+        <select name="generator_unit" aria-label="Unit for generator">
+            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="generator_age"></td>
                                 <td><select name="generator_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="generator_replace_repair_when"></td>
@@ -794,7 +907,14 @@
                             <tr>
                                 <td class="item-name">Fire alarm / sprinklers / fire pump</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_fire_systems" aria-label="HOA responsibility for Fire alarm sprinklers fire pump"></td>
-                                <td><input type="text" name="fire_systems_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="fire_systems_quantity" placeholder="Amount" aria-label="Quantity for fire systems">
+        <select name="fire_systems_unit" aria-label="Unit for fire systems">
+            <option value="Building SF" selected>Building SF</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="fire_systems_age"></td>
                                 <td><select name="fire_systems_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="fire_systems_replace_repair_when"></td>
@@ -805,7 +925,14 @@
                             <tr>
                                 <td class="item-name">Parking garage structure</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_parking_garage_structure" aria-label="HOA responsibility for Parking garage structure"></td>
-                                <td><input type="text" name="parking_garage_structure_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="parking_garage_structure_quantity" placeholder="Amount" aria-label="Quantity for parking garage structure">
+        <select name="parking_garage_structure_unit" aria-label="Unit for parking garage structure">
+            <option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="parking_garage_structure_age"></td>
                                 <td><select name="parking_garage_structure_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="parking_garage_structure_replace_repair_when"></td>
@@ -816,7 +943,14 @@
                             <tr>
                                 <td class="item-name">Garage waterproofing / coating</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_garage_waterproofing" aria-label="HOA responsibility for Garage waterproofing coating"></td>
-                                <td><input type="text" name="garage_waterproofing_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="garage_waterproofing_quantity" placeholder="Amount" aria-label="Quantity for garage waterproofing">
+        <select name="garage_waterproofing_unit" aria-label="Unit for garage waterproofing">
+            <option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="garage_waterproofing_age"></td>
                                 <td><select name="garage_waterproofing_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="garage_waterproofing_replace_repair_when"></td>
@@ -827,7 +961,14 @@
                             <tr>
                                 <td class="item-name">Asphalt roads / parking lots</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_asphalt" aria-label="HOA responsibility for Asphalt roads parking lots"></td>
-                                <td><input type="text" name="asphalt_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="asphalt_quantity" placeholder="Amount" aria-label="Quantity for asphalt">
+        <select name="asphalt_unit" aria-label="Unit for asphalt">
+            <option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="asphalt_age"></td>
                                 <td><select name="asphalt_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="asphalt_replace_repair_when"></td>
@@ -838,7 +979,14 @@
                             <tr>
                                 <td class="item-name">Concrete walks / driveways / curbs</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_concrete" aria-label="HOA responsibility for Concrete walks driveways curbs"></td>
-                                <td><input type="text" name="concrete_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="concrete_quantity" placeholder="Amount" aria-label="Quantity for concrete">
+        <select name="concrete_unit" aria-label="Unit for concrete">
+            <option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="concrete_age"></td>
                                 <td><select name="concrete_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="concrete_replace_repair_when"></td>
@@ -849,7 +997,14 @@
                             <tr>
                                 <td class="item-name">Storm drains / drainage</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_storm_drains" aria-label="HOA responsibility for Storm drains drainage"></td>
-                                <td><input type="text" name="storm_drains_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="storm_drains_quantity" placeholder="Amount" aria-label="Quantity for storm drains">
+        <select name="storm_drains_unit" aria-label="Unit for storm drains">
+            <option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Count">Count</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="storm_drains_age"></td>
                                 <td><select name="storm_drains_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="storm_drains_replace_repair_when"></td>
@@ -860,7 +1015,14 @@
                             <tr>
                                 <td class="item-name">Retaining walls</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_retaining_walls" aria-label="HOA responsibility for Retaining walls"></td>
-                                <td><input type="text" name="retaining_walls_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="retaining_walls_quantity" placeholder="Amount" aria-label="Quantity for retaining walls">
+        <select name="retaining_walls_unit" aria-label="Unit for retaining walls">
+            <option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Count">Count</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="retaining_walls_age"></td>
                                 <td><select name="retaining_walls_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="retaining_walls_replace_repair_when"></td>
@@ -871,7 +1033,14 @@
                             <tr>
                                 <td class="item-name">Gates / access controls</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_gates_access" aria-label="HOA responsibility for Gates access controls"></td>
-                                <td><input type="text" name="gates_access_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="gates_access_quantity" placeholder="Amount" aria-label="Quantity for gates access">
+        <select name="gates_access_unit" aria-label="Unit for gates access">
+            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="gates_access_age"></td>
                                 <td><select name="gates_access_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="gates_access_replace_repair_when"></td>
@@ -882,7 +1051,14 @@
                             <tr>
                                 <td class="item-name">Pool / spa</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_pool_spa" aria-label="HOA responsibility for Pool spa"></td>
-                                <td><input type="text" name="pool_spa_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="pool_spa_quantity" placeholder="Amount" aria-label="Quantity for pool spa">
+        <select name="pool_spa_unit" aria-label="Unit for pool spa">
+            <option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="pool_spa_age"></td>
                                 <td><select name="pool_spa_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="pool_spa_replace_repair_when"></td>
@@ -893,7 +1069,14 @@
                             <tr>
                                 <td class="item-name">Clubhouse / common rooms</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_clubhouse" aria-label="HOA responsibility for Clubhouse common rooms"></td>
-                                <td><input type="text" name="clubhouse_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="clubhouse_quantity" placeholder="Amount" aria-label="Quantity for clubhouse">
+        <select name="clubhouse_unit" aria-label="Unit for clubhouse">
+            <option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="clubhouse_age"></td>
                                 <td><select name="clubhouse_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="clubhouse_replace_repair_when"></td>
@@ -904,7 +1087,14 @@
                             <tr>
                                 <td class="item-name">Hallways / lobby / common finishes</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_hallways_lobby" aria-label="HOA responsibility for Hallways lobby common finishes"></td>
-                                <td><input type="text" name="hallways_lobby_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="hallways_lobby_quantity" placeholder="Amount" aria-label="Quantity for hallways lobby">
+        <select name="hallways_lobby_unit" aria-label="Unit for hallways lobby">
+            <option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="hallways_lobby_age"></td>
                                 <td><select name="hallways_lobby_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="hallways_lobby_replace_repair_when"></td>
@@ -915,7 +1105,14 @@
                             <tr>
                                 <td class="item-name">Landscaping / irrigation</td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_landscaping_irrigation" aria-label="HOA responsibility for Landscaping irrigation"></td>
-                                <td><input type="text" name="landscaping_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="landscaping_quantity" placeholder="Amount" aria-label="Quantity for landscaping">
+        <select name="landscaping_unit" aria-label="Unit for landscaping">
+            <option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="landscaping_age"></td>
                                 <td><select name="landscaping_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="landscaping_replace_repair_when"></td>
@@ -924,9 +1121,18 @@
                             </tr>
 
                             <tr>
-                                <td class="item-name">Other major item(s)</td>
+                                <td class="item-name">
+                                    <input type="text" name="other_1_item_name" placeholder="Item name" aria-label="Other major item 1 name">
+                                </td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_other_1" aria-label="HOA responsibility for Other major item 1"></td>
-                                <td><input type="text" name="other_1_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="other_1_quantity" placeholder="Amount" aria-label="Quantity for other major item 1">
+        <select name="other_1_unit" aria-label="Unit for other major item 1">
+            <option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="other_1_age"></td>
                                 <td><select name="other_1_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="other_1_replace_repair_when"></td>
@@ -935,9 +1141,18 @@
                             </tr>
 
                             <tr>
-                                <td class="item-name">Other major item(s)</td>
+                                <td class="item-name">
+                                    <input type="text" name="other_2_item_name" placeholder="Item name" aria-label="Other major item 2 name">
+                                </td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_other_2" aria-label="HOA responsibility for Other major item 2"></td>
-                                <td><input type="text" name="other_2_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="other_2_quantity" placeholder="Amount" aria-label="Quantity for other major item 2">
+        <select name="other_2_unit" aria-label="Unit for other major item 2">
+            <option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="other_2_age"></td>
                                 <td><select name="other_2_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="other_2_replace_repair_when"></td>
@@ -946,9 +1161,18 @@
                             </tr>
 
                             <tr>
-                                <td class="item-name">Other major item(s)</td>
+                                <td class="item-name">
+                                    <input type="text" name="other_3_item_name" placeholder="Item name" aria-label="Other major item 3 name">
+                                </td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_other_3" aria-label="HOA responsibility for Other major item 3"></td>
-                                <td><input type="text" name="other_3_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="other_3_quantity" placeholder="Amount" aria-label="Quantity for other major item 3">
+        <select name="other_3_unit" aria-label="Unit for other major item 3">
+            <option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="other_3_age"></td>
                                 <td><select name="other_3_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="other_3_replace_repair_when"></td>
@@ -957,9 +1181,18 @@
                             </tr>
 
                             <tr>
-                                <td class="item-name">Other major item(s)</td>
+                                <td class="item-name">
+                                    <input type="text" name="other_4_item_name" placeholder="Item name" aria-label="Other major item 4 name">
+                                </td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_other_4" aria-label="HOA responsibility for Other major item 4"></td>
-                                <td><input type="text" name="other_4_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="other_4_quantity" placeholder="Amount" aria-label="Quantity for other major item 4">
+        <select name="other_4_unit" aria-label="Unit for other major item 4">
+            <option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="other_4_age"></td>
                                 <td><select name="other_4_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="other_4_replace_repair_when"></td>
@@ -968,9 +1201,18 @@
                             </tr>
 
                             <tr>
-                                <td class="item-name">Other major item(s)</td>
+                                <td class="item-name">
+                                    <input type="text" name="other_5_item_name" placeholder="Item name" aria-label="Other major item 5 name">
+                                </td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_other_5" aria-label="HOA responsibility for Other major item 5"></td>
-                                <td><input type="text" name="other_5_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="other_5_quantity" placeholder="Amount" aria-label="Quantity for other major item 5">
+        <select name="other_5_unit" aria-label="Unit for other major item 5">
+            <option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="other_5_age"></td>
                                 <td><select name="other_5_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="other_5_replace_repair_when"></td>
@@ -979,9 +1221,18 @@
                             </tr>
 
                             <tr>
-                                <td class="item-name">Other major item(s)</td>
+                                <td class="item-name">
+                                    <input type="text" name="other_6_item_name" placeholder="Item name" aria-label="Other major item 6 name">
+                                </td>
                                 <td class="hoa-cell"><input type="checkbox" name="hoa_other_6" aria-label="HOA responsibility for Other major item 6"></td>
-                                <td><input type="text" name="other_6_quantity"></td>
+                                <td>
+    <div class="quantity-cell">
+        <input type="text" name="other_6_quantity" placeholder="Amount" aria-label="Quantity for other major item 6">
+        <select name="other_6_unit" aria-label="Unit for other major item 6">
+            <option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Other">Other</option>
+        </select>
+    </div>
+</td>
                                 <td><input type="text" name="other_6_age"></td>
                                 <td><select name="other_6_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
                                 <td><input type="text" name="other_6_replace_repair_when"></td>
@@ -1167,4 +1418,3 @@
 
 </body>
 </html>
-
