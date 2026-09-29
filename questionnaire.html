@@ -595,6 +595,8 @@
               action="https://formspree.io/f/xyezdvgv"
               method="POST">
 
+            <input type="hidden" name="subject" value="New Condo Reserve Study Questionnaire — {{ association_name }}">
+
             <section class="section">
                 <div class="section-heading">
                     <span class="section-number">01</span>
@@ -618,8 +620,13 @@
                     </div>
 
                     <div class="field">
-                        <label for="email-phone">Email and phone</label>
-                        <input type="text" id="email-phone" name="email_and_phone">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email">
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel">
                     </div>
 
                     <div class="field">
@@ -1700,7 +1707,7 @@
                             <label for="signature-pad">Signature</label>
                             <div class="signature-pad-wrap">
                                 <canvas id="signature-pad" class="signature-pad" aria-label="Draw your signature here"></canvas>
-                                <input type="hidden" id="signature-data" name="signature">
+                                <input type="hidden" id="signature-status" name="signature_status" value="">
                                 <div class="signature-controls">
                                     <p class="signature-hint">Draw your signature above using your mouse, trackpad, finger, or stylus.</p>
                                     <button type="button" class="clear-signature" id="clear-signature">Clear</button>
@@ -1746,7 +1753,7 @@
 
 <script>
     const signatureCanvas = document.getElementById("signature-pad");
-    const signatureInput = document.getElementById("signature-data");
+    const signatureInput = document.getElementById("signature-status");
     const clearSignatureButton = document.getElementById("clear-signature");
     const signatureContext = signatureCanvas.getContext("2d");
     let signatureDrawing = false;
@@ -1788,7 +1795,7 @@
     function finishSignature() {
         if (!signatureDrawing) return;
         signatureDrawing = false;
-        signatureInput.value = signatureHasInk ? signatureCanvas.toDataURL("image/png") : "";
+        signatureInput.value = signatureHasInk ? "Signature captured via on-page signature pad." : "";
     }
 
     signatureCanvas.addEventListener("pointerup", finishSignature);
@@ -1813,6 +1820,13 @@
 
     const form = document.getElementById("questionnaire-form");
 
+    // Default both questionnaire dates to today, while still allowing the user to change them.
+    const today = new Date().toISOString().split("T")[0];
+    const completedDate = document.getElementById("completed-date");
+    const acknowledgmentDate = document.getElementById("ack-date");
+    if (completedDate && !completedDate.value) completedDate.value = today;
+    if (acknowledgmentDate && !acknowledgmentDate.value) acknowledgmentDate.value = today;
+
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
@@ -1821,7 +1835,7 @@
             return;
         }
 
-        signatureInput.value = signatureCanvas.toDataURL("image/png");
+        signatureInput.value = "Signature captured via on-page signature pad."
 
         const submitButton = document.getElementById("submit-button");
         submitButton.disabled = true;
@@ -1865,3 +1879,4 @@
 
 </body>
 </html>
+
