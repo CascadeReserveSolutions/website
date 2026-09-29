@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condo Reserve Study Questionnaire | Cascade Reserve Solutions</title>
+    <meta name="description" content="Condo reserve study questionnaire for boards and property managers from Cascade Reserve Solutions.">
+    <link rel="icon" href="logo-mark.png">
+
+    <style>
+        :root {
+            --blue: #163F5C;
+            --teal: #28706C;
+            --evergreen: #527D73;
+            --mist: #F4F7F8;
+            --slate: #1D2B34;
+            --blue-gray: #DCE5E9;
+            --white: #FFFFFF;
+            --muted: #52636D;
+            --line: #C9D6DB;
+            --soft-teal: #EDF4F1;
+            --shadow: 0 20px 50px rgba(29, 43, 52, 0.08);
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            color: var(--slate);
+            background: var(--mist);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.55;
+        }
+
+        a { color: inherit; }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(255,255,255,.96);
+            border-bottom: 1px solid var(--blue-gray);
+            backdrop-filter: blur(12px);
+        }
+
+        .header-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 14px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--blue);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 42px;
+            height: 32px;
+            object-fit: contain;
+        }
+
+        .back-link {
+            color: var(--teal);
+            text-decoration: none;
+            font-size: .9rem;
+            font-weight: 700;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+
+        .hero {
+            padding: 80px 24px 55px;
+            background:
+                linear-gradient(135deg, #F3F7F8 0%, #FFFFFF 55%, #E8F1F2 100%);
+        }
+
+        .hero-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--evergreen);
+            font-size: .72rem;
+            font-weight: 800;
+            letter-spacing: .16em;
+        }
+
+        h1 {
+            margin: 0;
+            max-width: 850px;
+            color: var(--slate);
+            font-size: clamp(2.4rem, 6vw, 4.6rem);
+            line-height: 1.03;
+            letter-spacing: -.055em;
+        }
+
+        .hero-copy {
+            max-width: 760px;
+            margin: 25px 0 0;
+            color: var(--muted);
+            font-size: 1.08rem;
+            line-height: 1.75;
+        }
+
+        .questionnaire-wrap {
+            max-width: 1000px;
+            margin: -5px auto 80px;
+            padding: 0 24px;
+        }
+
+        form {
+            background: var(--white);
+            border: 1px solid var(--blue-gray);
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .section {
+            padding: 48px;
+            border-bottom: 1px solid var(--blue-gray);
+        }
+
+        .section:last-of-type { border-bottom: 0; }
+
+        .section-heading {
+            margin-bottom: 30px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            margin-bottom: 12px;
+            border-radius: 50%;
+            color: var(--teal);
+            background: var(--soft-teal);
+            font-size: .78rem;
+            font-weight: 800;
+        }
+
+        h2 {
+            margin: 0 0 10px;
+            color: var(--blue);
+            font-size: 1.8rem;
+            letter-spacing: -.025em;
+        }
+
+        .section-intro {
+            margin: 0;
+            color: var(--muted);
+            max-width: 780px;
+        }
+
+        .field-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .field.full { grid-column: 1 / -1; }
+
+        .field label,
+        .table-label {
+            display: block;
+            margin-bottom: 7px;
+            color: var(--blue);
+            font-size: .86rem;
+            font-weight: 750;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid #9AAEB8;
+            border-radius: 7px;
+            padding: 12px 13px;
+            color: var(--slate);
+            background: #fff;
+            font: inherit;
+            font-size: .95rem;
+            outline: none;
+            transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(40,112,108,.12);
+        }
+
+        textarea {
+            min-height: 115px;
+            resize: vertical;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #9AA7AD;
+        }
+
+        .money-wrap {
+            position: relative;
+        }
+
+        .money-wrap span {
+            position: absolute;
+            left: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            pointer-events: none;
+        }
+
+        .money-wrap input { padding-left: 29px; }
+
+        .hint {
+            margin: 7px 0 0;
+            color: #7B8A92;
+            font-size: .78rem;
+        }
+
+        .subsection {
+            margin-top: 38px;
+        }
+
+        .subsection:first-child { margin-top: 0; }
+
+        .subsection-title {
+            margin: 0 0 16px;
+            color: var(--slate);
+            font-size: 1.05rem;
+        }
+
+        .property-table-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--blue-gray);
+            border-radius: 10px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            width: 100%;
+            min-width: 1040px;
+            border-collapse: collapse;
+            background: #fff;
+        }
+
+        th {
+            padding: 13px 10px;
+            text-align: left;
+            color: var(--blue);
+            background: var(--soft-teal);
+            border-bottom: 1px solid var(--blue-gray);
+            font-size: .75rem;
+            line-height: 1.25;
+            letter-spacing: .02em;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #E4EBEE;
+            vertical-align: middle;
+            font-size: .85rem;
+        }
+
+        tr:nth-child(even) td { background: #FAFCFC; }
+        tr:last-child td { border-bottom: 0; }
+
+        td.item-name {
+            min-width: 220px;
+            color: var(--slate);
+            font-weight: 700;
+        }
+
+        td.hoa-cell {
+            width: 65px;
+            text-align: center;
+        }
+
+        td.hoa-cell input {
+            width: 19px;
+            height: 19px;
+            accent-color: var(--teal);
+            cursor: pointer;
+        }
+
+        td input,
+        td select {
+            min-width: 105px;
+            padding: 9px 9px;
+            font-size: .82rem;
+        }
+
+        td input[type="number"] { min-width: 100px; }
+        td select { min-width: 120px; }
+
+        .document-note {
+            margin-top: 22px;
+            padding: 17px 19px;
+            border-left: 4px solid var(--teal);
+            border-radius: 6px;
+            background: var(--mist);
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        .acknowledgment {
+            padding: 28px;
+            border: 1px solid var(--blue-gray);
+            border-radius: 10px;
+            background: #FBFCFC;
+        }
+
+        .acknowledgment h3 {
+            margin: 0 0 16px;
+            color: var(--blue);
+            font-size: 1rem;
+            letter-spacing: .04em;
+        }
+
+        .acknowledgment p {
+            margin: 0 0 13px;
+            color: var(--muted);
+            font-size: .88rem;
+            line-height: 1.7;
+        }
+
+        .confirmation {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 25px 0 0;
+            padding: 15px;
+            border-radius: 7px;
+            background: var(--soft-teal);
+        }
+
+        .confirmation input {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            flex: 0 0 auto;
+            accent-color: var(--teal);
+        }
+
+        .confirmation label {
+            color: var(--slate);
+            font-size: .87rem;
+            font-weight: 650;
+        }
+
+        .submit-area {
+            padding: 38px 48px 45px;
+            background: #F8FAFA;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 190px;
+            padding: 14px 24px;
+            border: 0;
+            border-radius: 6px;
+            color: #fff;
+            background: var(--teal);
+            font: inherit;
+            font-size: .95rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+            box-shadow: 0 8px 20px rgba(40,112,108,.16);
+        }
+
+        .button:hover {
+            background: #225F5C;
+            transform: translateY(-1px);
+        }
+
+        .button:disabled {
+            opacity: .65;
+            cursor: wait;
+            transform: none;
+        }
+
+        .submit-note {
+            max-width: 650px;
+            margin: 15px auto 0;
+            color: #7B8A92;
+            font-size: .78rem;
+        }
+
+        .thank-you {
+            padding: 90px 40px;
+            text-align: center;
+        }
+
+        .thank-you h2 {
+            margin-bottom: 16px;
+            font-size: clamp(2rem, 5vw, 3.4rem);
+        }
+
+        .thank-you p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        footer {
+            padding: 50px 24px 30px;
+            text-align: center;
+            color: #87939A;
+            background: var(--slate);
+            font-size: .85rem;
+        }
+
+        .footer-logo {
+            width: 250px;
+            max-width: 80%;
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 800px) {
+            .header-inner { padding: 12px 20px; }
+            .logo span { display: none; }
+
+            .hero {
+                padding: 62px 20px 45px;
+            }
+
+            .questionnaire-wrap {
+                padding: 0 14px;
+                margin-bottom: 50px;
+            }
+
+            .section {
+                padding: 32px 22px;
+            }
+
+            .field-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .field.full { grid-column: auto; }
+
+            .submit-area {
+                padding: 32px 22px 38px;
+            }
+
+            .acknowledgment { padding: 22px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a class="logo" href="index.html" aria-label="Cascade Reserve Solutions home">
+            <img src="logo-mark.png" alt="">
+            <span>Cascade Reserve Solutions</span>
+        </a>
+
+        <a class="back-link" href="index.html">← Back to website</a>
+    </div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <p class="eyebrow">CASCADE RESERVE SOLUTIONS, LLC</p>
+            <h1>Condo Reserve Study Questionnaire</h1>
+            <p class="hero-copy">
+                A quick form for the board or property manager. Fill in what you know.
+                Estimates are fine. Leave anything blank if you do not know it.
+                Please send the documents listed on the last page if they are available.
+            </p>
+        </div>
+    </section>
+
+    <div class="questionnaire-wrap">
+
+        <form id="questionnaire-form"
+              action="https://formspree.io/f/xyezdvgv"
+              method="POST">
+
+            <section class="section">
+                <div class="section-heading">
+                    <span class="section-number">01</span>
+                    <h2>Basic Information</h2>
+                </div>
+
+                <div class="field-grid">
+                    <div class="field">
+                        <label for="association-name">Association name</label>
+                        <input type="text" id="association-name" name="association_name">
+                    </div>
+
+                    <div class="field">
+                        <label for="property-address">Property address</label>
+                        <input type="text" id="property-address" name="property_address">
+                    </div>
+
+                    <div class="field">
+                        <label for="contact-person">Contact person</label>
+                        <input type="text" id="contact-person" name="contact_person">
+                    </div>
+
+                    <div class="field">
+                        <label for="email-phone">Email and phone</label>
+                        <input type="text" id="email-phone" name="email_and_phone">
+                    </div>
+
+                    <div class="field">
+                        <label for="year-built">Year built</label>
+                        <input type="number" id="year-built" name="year_built" min="1800" max="2200">
+                    </div>
+
+                    <div class="field">
+                        <label for="number-buildings">Number of buildings</label>
+                        <input type="number" id="number-buildings" name="number_of_buildings" min="0">
+                    </div>
+
+                    <div class="field">
+                        <label for="number-units">Number of units</label>
+                        <input type="number" id="number-units" name="number_of_units" min="0">
+                    </div>
+
+                    <div class="field">
+                        <label for="number-floors">Number of floors</label>
+                        <input type="number" id="number-floors" name="number_of_floors" min="0">
+                    </div>
+
+                    <div class="field">
+                        <label for="parking">Parking</label>
+                        <select id="parking" name="parking">
+                            <option value="">Select one</option>
+                            <option value="Surface">Surface</option>
+                            <option value="Garage">Garage</option>
+                            <option value="Both">Both</option>
+                        </select>
+                    </div>
+
+                    <div class="field full">
+                        <label for="unusual-property">Anything unusual about the property?</label>
+                        <textarea id="unusual-property" name="anything_unusual_about_property"
+                                  placeholder="Describe anything unusual that may be relevant to the reserve study."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-heading">
+                    <span class="section-number">02</span>
+                    <h2>Reserve Money</h2>
+                </div>
+
+                <div class="field-grid">
+                    <div class="field">
+                        <label for="current-reserves">How much is currently in reserves?</label>
+                        <div class="money-wrap">
+                            <span>$</span>
+                            <input type="number" id="current-reserves" name="current_reserves"
+                                   min="0" step="0.01" inputmode="decimal">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="annual-reserves">How much goes into reserves each year?</label>
+                        <div class="money-wrap">
+                            <span>$</span>
+                            <input type="number" id="annual-reserves" name="annual_reserve_contribution"
+                                   min="0" step="0.01" inputmode="decimal">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="reserve-debt">Any reserve loans or other debt?</label>
+                        <div class="money-wrap">
+                            <span>$</span>
+                            <input type="number" id="reserve-debt" name="reserve_loans_or_other_debt"
+                                   min="0" step="0.01" inputmode="decimal">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="special-assessment">Any approved special assessment?</label>
+                        <div class="money-wrap">
+                            <span>$</span>
+                            <input type="number" id="special-assessment" name="approved_special_assessment"
+                                   min="0" step="0.01" inputmode="decimal">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="last-study-date">Date of the last reserve study</label>
+                        <input type="date" id="last-study-date" name="last_reserve_study_date">
+                    </div>
+
+                    <div class="field">
+                        <label for="study-preparer">Who prepared it?</label>
+                        <input type="text" id="study-preparer" name="last_reserve_study_prepared_by">
+                    </div>
+
+                    <div class="field full">
+                        <label for="planned-project">Is the board already planning a major project or special assessment? If yes, briefly explain.</label>
+                        <textarea id="planned-project" name="planned_major_project_or_special_assessment"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-heading">
+                    <span class="section-number">03</span>
+                    <h2>Major Property Items</h2>
+                    <p class="section-intro">
+                        For each item the HOA is known to be responsible for, give us your best estimate.
+                        Condition: Good, OK, Poor, or Unknown. Add a short note only when something needs explanation.
+                    </p>
+                </div>
+
+                <div class="property-table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>HOA?</th>
+                                <th>How many / how much</th>
+                                <th>About how old?</th>
+                                <th>Condition</th>
+                                <th>Replace or repair when?</th>
+                                <th>Notes</th>
+                                <th>Known Problems</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="item-name">Roofs</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_roofs" aria-label="HOA responsibility for Roofs"></td>
+                                <td><input type="text" name="roofs_quantity"></td>
+                                <td><input type="text" name="roofs_age"></td>
+                                <td><select name="roofs_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="roofs_replace_repair_when"></td>
+                                <td><input type="text" name="roofs_notes"></td>
+                                <td><input type="text" name="roofs_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Exterior walls / siding / stucco</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_exterior_walls" aria-label="HOA responsibility for Exterior walls"></td>
+                                <td><input type="text" name="exterior_walls_quantity"></td>
+                                <td><input type="text" name="exterior_walls_age"></td>
+                                <td><select name="exterior_walls_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="exterior_walls_replace_repair_when"></td>
+                                <td><input type="text" name="exterior_walls_notes"></td>
+                                <td><input type="text" name="exterior_walls_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Windows and exterior doors</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_windows_doors" aria-label="HOA responsibility for Windows and exterior doors"></td>
+                                <td><input type="text" name="windows_doors_quantity"></td>
+                                <td><input type="text" name="windows_doors_age"></td>
+                                <td><select name="windows_doors_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="windows_doors_replace_repair_when"></td>
+                                <td><input type="text" name="windows_doors_notes"></td>
+                                <td><input type="text" name="windows_doors_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Balconies / decks / railings</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_balconies_decks_railings" aria-label="HOA responsibility for Balconies decks railings"></td>
+                                <td><input type="text" name="balconies_quantity"></td>
+                                <td><input type="text" name="balconies_age"></td>
+                                <td><select name="balconies_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="balconies_replace_repair_when"></td>
+                                <td><input type="text" name="balconies_notes"></td>
+                                <td><input type="text" name="balconies_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Building structure / foundation</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_structure_foundation" aria-label="HOA responsibility for Building structure foundation"></td>
+                                <td><input type="text" name="structure_foundation_quantity"></td>
+                                <td><input type="text" name="structure_foundation_age"></td>
+                                <td><select name="structure_foundation_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="structure_foundation_replace_repair_when"></td>
+                                <td><input type="text" name="structure_foundation_notes"></td>
+                                <td><input type="text" name="structure_foundation_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Waterproofing / sealants</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_waterproofing" aria-label="HOA responsibility for Waterproofing sealants"></td>
+                                <td><input type="text" name="waterproofing_quantity"></td>
+                                <td><input type="text" name="waterproofing_age"></td>
+                                <td><select name="waterproofing_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="waterproofing_replace_repair_when"></td>
+                                <td><input type="text" name="waterproofing_notes"></td>
+                                <td><input type="text" name="waterproofing_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Elevators</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_elevators" aria-label="HOA responsibility for Elevators"></td>
+                                <td><input type="text" name="elevators_quantity"></td>
+                                <td><input type="text" name="elevators_age"></td>
+                                <td><select name="elevators_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="elevators_replace_repair_when"></td>
+                                <td><input type="text" name="elevators_notes"></td>
+                                <td><input type="text" name="elevators_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Central heating / cooling</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_central_hvac" aria-label="HOA responsibility for Central heating cooling"></td>
+                                <td><input type="text" name="central_hvac_quantity"></td>
+                                <td><input type="text" name="central_hvac_age"></td>
+                                <td><select name="central_hvac_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="central_hvac_replace_repair_when"></td>
+                                <td><input type="text" name="central_hvac_notes"></td>
+                                <td><input type="text" name="central_hvac_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Boilers / water heaters</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_boilers_water_heaters" aria-label="HOA responsibility for Boilers water heaters"></td>
+                                <td><input type="text" name="boilers_quantity"></td>
+                                <td><input type="text" name="boilers_age"></td>
+                                <td><select name="boilers_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="boilers_replace_repair_when"></td>
+                                <td><input type="text" name="boilers_notes"></td>
+                                <td><input type="text" name="boilers_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Main plumbing / sewer lines</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_plumbing_sewer" aria-label="HOA responsibility for Main plumbing sewer lines"></td>
+                                <td><input type="text" name="plumbing_sewer_quantity"></td>
+                                <td><input type="text" name="plumbing_sewer_age"></td>
+                                <td><select name="plumbing_sewer_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="plumbing_sewer_replace_repair_when"></td>
+                                <td><input type="text" name="plumbing_sewer_notes"></td>
+                                <td><input type="text" name="plumbing_sewer_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Electrical panels / main service</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_electrical" aria-label="HOA responsibility for Electrical panels main service"></td>
+                                <td><input type="text" name="electrical_quantity"></td>
+                                <td><input type="text" name="electrical_age"></td>
+                                <td><select name="electrical_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="electrical_replace_repair_when"></td>
+                                <td><input type="text" name="electrical_notes"></td>
+                                <td><input type="text" name="electrical_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Generator</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_generator" aria-label="HOA responsibility for Generator"></td>
+                                <td><input type="text" name="generator_quantity"></td>
+                                <td><input type="text" name="generator_age"></td>
+                                <td><select name="generator_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="generator_replace_repair_when"></td>
+                                <td><input type="text" name="generator_notes"></td>
+                                <td><input type="text" name="generator_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Fire alarm / sprinklers / fire pump</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_fire_systems" aria-label="HOA responsibility for Fire alarm sprinklers fire pump"></td>
+                                <td><input type="text" name="fire_systems_quantity"></td>
+                                <td><input type="text" name="fire_systems_age"></td>
+                                <td><select name="fire_systems_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="fire_systems_replace_repair_when"></td>
+                                <td><input type="text" name="fire_systems_notes"></td>
+                                <td><input type="text" name="fire_systems_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Parking garage structure</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_parking_garage_structure" aria-label="HOA responsibility for Parking garage structure"></td>
+                                <td><input type="text" name="parking_garage_structure_quantity"></td>
+                                <td><input type="text" name="parking_garage_structure_age"></td>
+                                <td><select name="parking_garage_structure_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="parking_garage_structure_replace_repair_when"></td>
+                                <td><input type="text" name="parking_garage_structure_notes"></td>
+                                <td><input type="text" name="parking_garage_structure_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Garage waterproofing / coating</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_garage_waterproofing" aria-label="HOA responsibility for Garage waterproofing coating"></td>
+                                <td><input type="text" name="garage_waterproofing_quantity"></td>
+                                <td><input type="text" name="garage_waterproofing_age"></td>
+                                <td><select name="garage_waterproofing_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="garage_waterproofing_replace_repair_when"></td>
+                                <td><input type="text" name="garage_waterproofing_notes"></td>
+                                <td><input type="text" name="garage_waterproofing_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Asphalt roads / parking lots</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_asphalt" aria-label="HOA responsibility for Asphalt roads parking lots"></td>
+                                <td><input type="text" name="asphalt_quantity"></td>
+                                <td><input type="text" name="asphalt_age"></td>
+                                <td><select name="asphalt_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="asphalt_replace_repair_when"></td>
+                                <td><input type="text" name="asphalt_notes"></td>
+                                <td><input type="text" name="asphalt_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Concrete walks / driveways / curbs</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_concrete" aria-label="HOA responsibility for Concrete walks driveways curbs"></td>
+                                <td><input type="text" name="concrete_quantity"></td>
+                                <td><input type="text" name="concrete_age"></td>
+                                <td><select name="concrete_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="concrete_replace_repair_when"></td>
+                                <td><input type="text" name="concrete_notes"></td>
+                                <td><input type="text" name="concrete_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Storm drains / drainage</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_storm_drains" aria-label="HOA responsibility for Storm drains drainage"></td>
+                                <td><input type="text" name="storm_drains_quantity"></td>
+                                <td><input type="text" name="storm_drains_age"></td>
+                                <td><select name="storm_drains_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="storm_drains_replace_repair_when"></td>
+                                <td><input type="text" name="storm_drains_notes"></td>
+                                <td><input type="text" name="storm_drains_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Retaining walls</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_retaining_walls" aria-label="HOA responsibility for Retaining walls"></td>
+                                <td><input type="text" name="retaining_walls_quantity"></td>
+                                <td><input type="text" name="retaining_walls_age"></td>
+                                <td><select name="retaining_walls_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="retaining_walls_replace_repair_when"></td>
+                                <td><input type="text" name="retaining_walls_notes"></td>
+                                <td><input type="text" name="retaining_walls_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Gates / access controls</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_gates_access" aria-label="HOA responsibility for Gates access controls"></td>
+                                <td><input type="text" name="gates_access_quantity"></td>
+                                <td><input type="text" name="gates_access_age"></td>
+                                <td><select name="gates_access_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="gates_access_replace_repair_when"></td>
+                                <td><input type="text" name="gates_access_notes"></td>
+                                <td><input type="text" name="gates_access_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Pool / spa</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_pool_spa" aria-label="HOA responsibility for Pool spa"></td>
+                                <td><input type="text" name="pool_spa_quantity"></td>
+                                <td><input type="text" name="pool_spa_age"></td>
+                                <td><select name="pool_spa_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="pool_spa_replace_repair_when"></td>
+                                <td><input type="text" name="pool_spa_notes"></td>
+                                <td><input type="text" name="pool_spa_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Clubhouse / common rooms</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_clubhouse" aria-label="HOA responsibility for Clubhouse common rooms"></td>
+                                <td><input type="text" name="clubhouse_quantity"></td>
+                                <td><input type="text" name="clubhouse_age"></td>
+                                <td><select name="clubhouse_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="clubhouse_replace_repair_when"></td>
+                                <td><input type="text" name="clubhouse_notes"></td>
+                                <td><input type="text" name="clubhouse_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Hallways / lobby / common finishes</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_hallways_lobby" aria-label="HOA responsibility for Hallways lobby common finishes"></td>
+                                <td><input type="text" name="hallways_lobby_quantity"></td>
+                                <td><input type="text" name="hallways_lobby_age"></td>
+                                <td><select name="hallways_lobby_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="hallways_lobby_replace_repair_when"></td>
+                                <td><input type="text" name="hallways_lobby_notes"></td>
+                                <td><input type="text" name="hallways_lobby_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Landscaping / irrigation</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_landscaping_irrigation" aria-label="HOA responsibility for Landscaping irrigation"></td>
+                                <td><input type="text" name="landscaping_quantity"></td>
+                                <td><input type="text" name="landscaping_age"></td>
+                                <td><select name="landscaping_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="landscaping_replace_repair_when"></td>
+                                <td><input type="text" name="landscaping_notes"></td>
+                                <td><input type="text" name="landscaping_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Other major item(s)</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_other_1" aria-label="HOA responsibility for Other major item 1"></td>
+                                <td><input type="text" name="other_1_quantity"></td>
+                                <td><input type="text" name="other_1_age"></td>
+                                <td><select name="other_1_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="other_1_replace_repair_when"></td>
+                                <td><input type="text" name="other_1_notes"></td>
+                                <td><input type="text" name="other_1_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Other major item(s)</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_other_2" aria-label="HOA responsibility for Other major item 2"></td>
+                                <td><input type="text" name="other_2_quantity"></td>
+                                <td><input type="text" name="other_2_age"></td>
+                                <td><select name="other_2_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="other_2_replace_repair_when"></td>
+                                <td><input type="text" name="other_2_notes"></td>
+                                <td><input type="text" name="other_2_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Other major item(s)</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_other_3" aria-label="HOA responsibility for Other major item 3"></td>
+                                <td><input type="text" name="other_3_quantity"></td>
+                                <td><input type="text" name="other_3_age"></td>
+                                <td><select name="other_3_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="other_3_replace_repair_when"></td>
+                                <td><input type="text" name="other_3_notes"></td>
+                                <td><input type="text" name="other_3_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Other major item(s)</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_other_4" aria-label="HOA responsibility for Other major item 4"></td>
+                                <td><input type="text" name="other_4_quantity"></td>
+                                <td><input type="text" name="other_4_age"></td>
+                                <td><select name="other_4_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="other_4_replace_repair_when"></td>
+                                <td><input type="text" name="other_4_notes"></td>
+                                <td><input type="text" name="other_4_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Other major item(s)</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_other_5" aria-label="HOA responsibility for Other major item 5"></td>
+                                <td><input type="text" name="other_5_quantity"></td>
+                                <td><input type="text" name="other_5_age"></td>
+                                <td><select name="other_5_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="other_5_replace_repair_when"></td>
+                                <td><input type="text" name="other_5_notes"></td>
+                                <td><input type="text" name="other_5_known_problems"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="item-name">Other major item(s)</td>
+                                <td class="hoa-cell"><input type="checkbox" name="hoa_other_6" aria-label="HOA responsibility for Other major item 6"></td>
+                                <td><input type="text" name="other_6_quantity"></td>
+                                <td><input type="text" name="other_6_age"></td>
+                                <td><select name="other_6_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
+                                <td><input type="text" name="other_6_replace_repair_when"></td>
+                                <td><input type="text" name="other_6_notes"></td>
+                                <td><input type="text" name="other_6_known_problems"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-heading">
+                    <span class="section-number">04</span>
+                    <h2>Final Questions</h2>
+                </div>
+
+                <div class="field-grid">
+                    <div class="field full">
+                        <label for="follow-up-contact">Who should we contact when we have follow-up questions?</label>
+                        <textarea id="follow-up-contact" name="follow_up_contact"></textarea>
+                    </div>
+
+                    <div class="field full">
+                        <label for="anything-else">Is there anything else that could affect the reserve study?</label>
+                        <textarea id="anything-else" name="anything_else_affecting_reserve_study"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="completed-by">Completed by</label>
+                        <input type="text" id="completed-by" name="completed_by">
+                    </div>
+
+                    <div class="field">
+                        <label for="completed-role">Role</label>
+                        <input type="text" id="completed-role" name="completed_by_role">
+                    </div>
+
+                    <div class="field">
+                        <label for="completed-date">Date</label>
+                        <input type="date" id="completed-date" name="completed_date">
+                    </div>
+                </div>
+
+                <div class="document-note">
+                    Please send the documents listed on the last page if they are available.
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="acknowledgment">
+                    <h3>CLIENT SCOPE ACKNOWLEDGMENT</h3>
+
+                    <p>
+                        By signing below, the Association acknowledges and agrees that it is responsible for identifying
+                        the community property and shared assets that it wishes to have included in the reserve study
+                        and for providing Cascade Reserve Solutions, LLC with reasonably available information relevant to those assets.
+                    </p>
+
+                    <p>
+                        The Association understands that an item, component, or asset that is not identified by the Association,
+                        disclosed to Cascade Reserve Solutions, LLC, or otherwise reasonably apparent during the Company's scope
+                        of work may not be included in the reserve study.
+                    </p>
+
+                    <p>
+                        The Association further acknowledges that Cascade Reserve Solutions, LLC will prepare the reserve study
+                        based on the information, records, observations, photographs, and other data available to the Company at
+                        the time of preparation. Cascade Reserve Solutions, LLC shall not be responsible for omissions resulting
+                        from incomplete, inaccurate, or omitted information supplied by the Association or from assets that the
+                        Association did not identify for inclusion in the study, except to the extent otherwise required by
+                        applicable law or expressly agreed to in writing.
+                    </p>
+
+                    <p>
+                        By signing below, the Association confirms that it has reviewed the items identified in this questionnaire
+                        and has provided the information it believes is necessary to establish the intended scope of the reserve study.
+                    </p>
+
+                    <div class="field-grid" style="margin-top: 25px;">
+                        <div class="field">
+                            <label for="ack-association">Association Name</label>
+                            <input type="text" id="ack-association" name="acknowledgment_association_name">
+                        </div>
+
+                        <div class="field">
+                            <label for="ack-representative">Authorized Representative</label>
+                            <input type="text" id="ack-representative" name="authorized_representative">
+                        </div>
+
+                        <div class="field">
+                            <label for="ack-title">Title</label>
+                            <input type="text" id="ack-title" name="authorized_representative_title">
+                        </div>
+
+                        <div class="field">
+                            <label for="ack-signature">Signature</label>
+                            <input type="text" id="ack-signature" name="signature"
+                                   placeholder="Type full name">
+                        </div>
+
+                        <div class="field">
+                            <label for="ack-date">Date</label>
+                            <input type="date" id="ack-date" name="acknowledgment_date">
+                        </div>
+                    </div>
+
+                    <div class="confirmation">
+                        <input type="checkbox" id="scope-confirmation" name="scope_acknowledgment_confirmed" value="Yes" required>
+                        <label for="scope-confirmation">
+                            I confirm that the Association has reviewed the information above and the Client Scope Acknowledgment.
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <div class="submit-area">
+                <button class="button" id="submit-button" type="submit">
+                    Submit Questionnaire
+                </button>
+
+                <p class="submit-note">
+                    Your completed questionnaire will be securely submitted to Cascade Reserve Solutions.
+                </p>
+            </div>
+
+        </form>
+
+    </div>
+
+</main>
+
+<footer>
+    <img src="logo-full.png" alt="Cascade Reserve Solutions" class="footer-logo">
+    <p>&copy; 2026 Cascade Reserve Solutions, LLC. All rights reserved.</p>
+</footer>
+
+<script>
+    const form = document.getElementById("questionnaire-form");
+
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const submitButton = document.getElementById("submit-button");
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+                document.querySelector(".questionnaire-wrap").innerHTML = `
+                    <div class="thank-you">
+                        <p class="eyebrow">THANK YOU</p>
+                        <h2>We've received your questionnaire.</h2>
+                        <p>
+                            Your completed questionnaire has been submitted to Cascade Reserve Solutions.
+                            We'll review the information and follow up if we have any questions.
+                        </p>
+                        <p style="margin-top:28px;">
+                            <a class="back-link" href="index.html">Return to the Cascade Reserve Solutions website →</a>
+                        </p>
+                    </div>
+                `;
+            } else {
+                submitButton.disabled = false;
+                submitButton.textContent = "Submit Questionnaire";
+                alert("There was a problem submitting the questionnaire. Please try again.");
+            }
+        } catch (error) {
+            submitButton.disabled = false;
+            submitButton.textContent = "Submit Questionnaire";
+            alert("There was a problem submitting the questionnaire. Please check your connection and try again.");
+        }
+    });
+</script>
+
+</body>
+</html>
+
