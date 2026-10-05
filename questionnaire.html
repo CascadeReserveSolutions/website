@@ -267,11 +267,10 @@
 
         .col-item { width: 20%; }
         .col-hoa { width: 6%; }
-        .col-quantity { width: 18%; }
-        .col-age { width: 9%; }
-        .col-condition { width: 10%; }
-        .col-replace { width: 12%; }
-        .col-notes { width: 25%; }
+        .col-quantity { width: 20%; }
+        .col-age { width: 10%; }
+        .col-condition { width: 12%; }
+        .col-notes { width: 32%; }
 
         th {
             padding: 13px 10px;
@@ -749,7 +748,6 @@
                             <col class="col-quantity">
                             <col class="col-age">
                             <col class="col-condition">
-                            <col class="col-replace">
                             <col class="col-notes">
                         </colgroup>
                         <thead>
@@ -759,7 +757,6 @@
                                 <th>Quantity / Unit</th>
                                 <th>Age</th>
                                 <th>Condition</th>
-                                <th>Replace / repair</th>
                                 <th>Notes / Known Problems</th>
                             </tr>
                         </thead>
@@ -771,14 +768,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="roofs_quantity" placeholder="Amount" aria-label="Quantity for Roofs">
-                                        <select name="roofs_unit" aria-label="Unit for Roofs">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="roofs_unit" aria-label="Unit for Roofs"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="roofs_age" aria-label="Age for Roofs"></td>
                                 <td><select name="roofs_condition" aria-label="Condition for Roofs"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="roofs_replace_repair_when" aria-label="Replace or repair timing for Roofs"></td>
                                 <td><textarea name="roofs_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Roofs"></textarea></td>
                             </tr>
                             <tr>
@@ -787,14 +781,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="exterior_walls_quantity" placeholder="Amount" aria-label="Quantity for Exterior walls">
-                                        <select name="exterior_walls_unit" aria-label="Unit for Exterior walls">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="exterior_walls_unit" aria-label="Unit for Exterior walls"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="exterior_walls_age" aria-label="Age for Exterior walls"></td>
                                 <td><select name="exterior_walls_condition" aria-label="Condition for Exterior walls"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="exterior_walls_replace_repair_when" aria-label="Replace or repair timing for Exterior walls"></td>
                                 <td><textarea name="exterior_walls_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Exterior walls"></textarea></td>
                             </tr>
                             <tr>
@@ -803,14 +794,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="siding_stucco_quantity" placeholder="Amount" aria-label="Quantity for Siding / stucco">
-                                        <select name="siding_stucco_unit" aria-label="Unit for Siding / stucco">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="siding_stucco_unit" aria-label="Unit for Siding / stucco"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="siding_stucco_age" aria-label="Age for Siding / stucco"></td>
                                 <td><select name="siding_stucco_condition" aria-label="Condition for Siding / stucco"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="siding_stucco_replace_repair_when" aria-label="Replace or repair timing for Siding / stucco"></td>
                                 <td><textarea name="siding_stucco_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Siding / stucco"></textarea></td>
                             </tr>
                             <tr>
@@ -819,14 +807,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="windows_quantity" placeholder="Amount" aria-label="Quantity for Windows">
-                                        <select name="windows_unit" aria-label="Unit for Windows">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="windows_unit" aria-label="Unit for Windows"><option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="windows_age" aria-label="Age for Windows"></td>
                                 <td><select name="windows_condition" aria-label="Condition for Windows"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="windows_replace_repair_when" aria-label="Replace or repair timing for Windows"></td>
                                 <td><textarea name="windows_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Windows"></textarea></td>
                             </tr>
                             <tr>
@@ -835,14 +820,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="exterior_doors_quantity" placeholder="Amount" aria-label="Quantity for Exterior doors">
-                                        <select name="exterior_doors_unit" aria-label="Unit for Exterior doors">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="exterior_doors_unit" aria-label="Unit for Exterior doors"><option value="Count" selected>Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="exterior_doors_age" aria-label="Age for Exterior doors"></td>
                                 <td><select name="exterior_doors_condition" aria-label="Condition for Exterior doors"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="exterior_doors_replace_repair_when" aria-label="Replace or repair timing for Exterior doors"></td>
                                 <td><textarea name="exterior_doors_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Exterior doors"></textarea></td>
                             </tr>
                             <tr>
@@ -851,14 +833,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="balconies_quantity" placeholder="Amount" aria-label="Quantity for Balconies">
-                                        <select name="balconies_unit" aria-label="Unit for Balconies">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="balconies_unit" aria-label="Unit for Balconies"><option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="balconies_age" aria-label="Age for Balconies"></td>
                                 <td><select name="balconies_condition" aria-label="Condition for Balconies"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="balconies_replace_repair_when" aria-label="Replace or repair timing for Balconies"></td>
                                 <td><textarea name="balconies_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Balconies"></textarea></td>
                             </tr>
                             <tr>
@@ -867,14 +846,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="decks_quantity" placeholder="Amount" aria-label="Quantity for Decks">
-                                        <select name="decks_unit" aria-label="Unit for Decks">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="decks_unit" aria-label="Unit for Decks"><option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="decks_age" aria-label="Age for Decks"></td>
                                 <td><select name="decks_condition" aria-label="Condition for Decks"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="decks_replace_repair_when" aria-label="Replace or repair timing for Decks"></td>
                                 <td><textarea name="decks_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Decks"></textarea></td>
                             </tr>
                             <tr>
@@ -883,14 +859,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="railings_quantity" placeholder="Amount" aria-label="Quantity for Railings">
-                                        <select name="railings_unit" aria-label="Unit for Railings">
-                                            <option value="Count">Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="railings_unit" aria-label="Unit for Railings"><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Count">Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="railings_age" aria-label="Age for Railings"></td>
                                 <td><select name="railings_condition" aria-label="Condition for Railings"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="railings_replace_repair_when" aria-label="Replace or repair timing for Railings"></td>
                                 <td><textarea name="railings_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Railings"></textarea></td>
                             </tr>
                             <tr>
@@ -899,14 +872,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="building_structure_quantity" placeholder="Amount" aria-label="Quantity for Building structure">
-                                        <select name="building_structure_unit" aria-label="Unit for Building structure">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="building_structure_unit" aria-label="Unit for Building structure"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Building">Building</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="building_structure_age" aria-label="Age for Building structure"></td>
                                 <td><select name="building_structure_condition" aria-label="Condition for Building structure"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="building_structure_replace_repair_when" aria-label="Replace or repair timing for Building structure"></td>
                                 <td><textarea name="building_structure_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Building structure"></textarea></td>
                             </tr>
                             <tr>
@@ -915,14 +885,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="foundation_quantity" placeholder="Amount" aria-label="Quantity for Foundation">
-                                        <select name="foundation_unit" aria-label="Unit for Foundation">
-                                            <option value="Count">Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="foundation_unit" aria-label="Unit for Foundation"><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="foundation_age" aria-label="Age for Foundation"></td>
                                 <td><select name="foundation_condition" aria-label="Condition for Foundation"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="foundation_replace_repair_when" aria-label="Replace or repair timing for Foundation"></td>
                                 <td><textarea name="foundation_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Foundation"></textarea></td>
                             </tr>
                             <tr>
@@ -931,14 +898,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="waterproofing_quantity" placeholder="Amount" aria-label="Quantity for Waterproofing">
-                                        <select name="waterproofing_unit" aria-label="Unit for Waterproofing">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="waterproofing_unit" aria-label="Unit for Waterproofing"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="waterproofing_age" aria-label="Age for Waterproofing"></td>
                                 <td><select name="waterproofing_condition" aria-label="Condition for Waterproofing"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="waterproofing_replace_repair_when" aria-label="Replace or repair timing for Waterproofing"></td>
                                 <td><textarea name="waterproofing_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Waterproofing"></textarea></td>
                             </tr>
                             <tr>
@@ -947,14 +911,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="sealants_quantity" placeholder="Amount" aria-label="Quantity for Sealants / caulking">
-                                        <select name="sealants_unit" aria-label="Unit for Sealants / caulking">
-                                            <option value="Count">Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="sealants_unit" aria-label="Unit for Sealants / caulking"><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="sealants_age" aria-label="Age for Sealants / caulking"></td>
                                 <td><select name="sealants_condition" aria-label="Condition for Sealants / caulking"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="sealants_replace_repair_when" aria-label="Replace or repair timing for Sealants / caulking"></td>
                                 <td><textarea name="sealants_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Sealants / caulking"></textarea></td>
                             </tr>
                             <tr>
@@ -963,14 +924,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="elevators_quantity" placeholder="Amount" aria-label="Quantity for Elevators">
-                                        <select name="elevators_unit" aria-label="Unit for Elevators">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="elevators_unit" aria-label="Unit for Elevators"><option value="Count" selected>Count</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="elevators_age" aria-label="Age for Elevators"></td>
                                 <td><select name="elevators_condition" aria-label="Condition for Elevators"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="elevators_replace_repair_when" aria-label="Replace or repair timing for Elevators"></td>
                                 <td><textarea name="elevators_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Elevators"></textarea></td>
                             </tr>
                             <tr>
@@ -979,14 +937,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="central_heating_quantity" placeholder="Amount" aria-label="Quantity for Central heating">
-                                        <select name="central_heating_unit" aria-label="Unit for Central heating">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="central_heating_unit" aria-label="Unit for Central heating"><option value="Count" selected>Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="central_heating_age" aria-label="Age for Central heating"></td>
                                 <td><select name="central_heating_condition" aria-label="Condition for Central heating"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="central_heating_replace_repair_when" aria-label="Replace or repair timing for Central heating"></td>
                                 <td><textarea name="central_heating_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Central heating"></textarea></td>
                             </tr>
                             <tr>
@@ -995,14 +950,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="central_cooling_quantity" placeholder="Amount" aria-label="Quantity for Central cooling">
-                                        <select name="central_cooling_unit" aria-label="Unit for Central cooling">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="central_cooling_unit" aria-label="Unit for Central cooling"><option value="Count" selected>Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="central_cooling_age" aria-label="Age for Central cooling"></td>
                                 <td><select name="central_cooling_condition" aria-label="Condition for Central cooling"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="central_cooling_replace_repair_when" aria-label="Replace or repair timing for Central cooling"></td>
                                 <td><textarea name="central_cooling_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Central cooling"></textarea></td>
                             </tr>
                             <tr>
@@ -1011,14 +963,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="boilers_quantity" placeholder="Amount" aria-label="Quantity for Boilers">
-                                        <select name="boilers_unit" aria-label="Unit for Boilers">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="boilers_unit" aria-label="Unit for Boilers"><option value="Count" selected>Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="boilers_age" aria-label="Age for Boilers"></td>
                                 <td><select name="boilers_condition" aria-label="Condition for Boilers"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="boilers_replace_repair_when" aria-label="Replace or repair timing for Boilers"></td>
                                 <td><textarea name="boilers_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Boilers"></textarea></td>
                             </tr>
                             <tr>
@@ -1027,14 +976,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="water_heaters_quantity" placeholder="Amount" aria-label="Quantity for Water heaters">
-                                        <select name="water_heaters_unit" aria-label="Unit for Water heaters">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="water_heaters_unit" aria-label="Unit for Water heaters"><option value="Count" selected>Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="water_heaters_age" aria-label="Age for Water heaters"></td>
                                 <td><select name="water_heaters_condition" aria-label="Condition for Water heaters"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="water_heaters_replace_repair_when" aria-label="Replace or repair timing for Water heaters"></td>
                                 <td><textarea name="water_heaters_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Water heaters"></textarea></td>
                             </tr>
                             <tr>
@@ -1043,14 +989,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="main_plumbing_quantity" placeholder="Amount" aria-label="Quantity for Main plumbing">
-                                        <select name="main_plumbing_unit" aria-label="Unit for Main plumbing">
-                                            <option value="Count">Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="main_plumbing_unit" aria-label="Unit for Main plumbing"><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Count">Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="main_plumbing_age" aria-label="Age for Main plumbing"></td>
                                 <td><select name="main_plumbing_condition" aria-label="Condition for Main plumbing"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="main_plumbing_replace_repair_when" aria-label="Replace or repair timing for Main plumbing"></td>
                                 <td><textarea name="main_plumbing_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Main plumbing"></textarea></td>
                             </tr>
                             <tr>
@@ -1059,14 +1002,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="sewer_lines_quantity" placeholder="Amount" aria-label="Quantity for Sewer lines">
-                                        <select name="sewer_lines_unit" aria-label="Unit for Sewer lines">
-                                            <option value="Count">Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="sewer_lines_unit" aria-label="Unit for Sewer lines"><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Count">Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="sewer_lines_age" aria-label="Age for Sewer lines"></td>
                                 <td><select name="sewer_lines_condition" aria-label="Condition for Sewer lines"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="sewer_lines_replace_repair_when" aria-label="Replace or repair timing for Sewer lines"></td>
                                 <td><textarea name="sewer_lines_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Sewer lines"></textarea></td>
                             </tr>
                             <tr>
@@ -1075,14 +1015,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="electrical_panels_quantity" placeholder="Amount" aria-label="Quantity for Electrical panels">
-                                        <select name="electrical_panels_unit" aria-label="Unit for Electrical panels">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="electrical_panels_unit" aria-label="Unit for Electrical panels"><option value="Count" selected>Count</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="electrical_panels_age" aria-label="Age for Electrical panels"></td>
                                 <td><select name="electrical_panels_condition" aria-label="Condition for Electrical panels"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="electrical_panels_replace_repair_when" aria-label="Replace or repair timing for Electrical panels"></td>
                                 <td><textarea name="electrical_panels_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Electrical panels"></textarea></td>
                             </tr>
                             <tr>
@@ -1091,14 +1028,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="main_electrical_service_quantity" placeholder="Amount" aria-label="Quantity for Main electrical service">
-                                        <select name="main_electrical_service_unit" aria-label="Unit for Main electrical service">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="main_electrical_service_unit" aria-label="Unit for Main electrical service"><option value="Count" selected>Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="main_electrical_service_age" aria-label="Age for Main electrical service"></td>
                                 <td><select name="main_electrical_service_condition" aria-label="Condition for Main electrical service"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="main_electrical_service_replace_repair_when" aria-label="Replace or repair timing for Main electrical service"></td>
                                 <td><textarea name="main_electrical_service_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Main electrical service"></textarea></td>
                             </tr>
                             <tr>
@@ -1107,14 +1041,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="generator_quantity" placeholder="Amount" aria-label="Quantity for Generator">
-                                        <select name="generator_unit" aria-label="Unit for Generator">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="generator_unit" aria-label="Unit for Generator"><option value="Count" selected>Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="generator_age" aria-label="Age for Generator"></td>
                                 <td><select name="generator_condition" aria-label="Condition for Generator"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="generator_replace_repair_when" aria-label="Replace or repair timing for Generator"></td>
                                 <td><textarea name="generator_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Generator"></textarea></td>
                             </tr>
                             <tr>
@@ -1123,14 +1054,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="fire_alarm_quantity" placeholder="Amount" aria-label="Quantity for Fire alarm">
-                                        <select name="fire_alarm_unit" aria-label="Unit for Fire alarm">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="fire_alarm_unit" aria-label="Unit for Fire alarm"><option value="Count" selected>Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="fire_alarm_age" aria-label="Age for Fire alarm"></td>
                                 <td><select name="fire_alarm_condition" aria-label="Condition for Fire alarm"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="fire_alarm_replace_repair_when" aria-label="Replace or repair timing for Fire alarm"></td>
                                 <td><textarea name="fire_alarm_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Fire alarm"></textarea></td>
                             </tr>
                             <tr>
@@ -1139,14 +1067,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="fire_sprinklers_quantity" placeholder="Amount" aria-label="Quantity for Fire sprinklers">
-                                        <select name="fire_sprinklers_unit" aria-label="Unit for Fire sprinklers">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="fire_sprinklers_unit" aria-label="Unit for Fire sprinklers"><option value="Count" selected>Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="fire_sprinklers_age" aria-label="Age for Fire sprinklers"></td>
                                 <td><select name="fire_sprinklers_condition" aria-label="Condition for Fire sprinklers"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="fire_sprinklers_replace_repair_when" aria-label="Replace or repair timing for Fire sprinklers"></td>
                                 <td><textarea name="fire_sprinklers_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Fire sprinklers"></textarea></td>
                             </tr>
                             <tr>
@@ -1155,14 +1080,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="fire_pump_quantity" placeholder="Amount" aria-label="Quantity for Fire pump">
-                                        <select name="fire_pump_unit" aria-label="Unit for Fire pump">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="fire_pump_unit" aria-label="Unit for Fire pump"><option value="Count" selected>Count</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="fire_pump_age" aria-label="Age for Fire pump"></td>
                                 <td><select name="fire_pump_condition" aria-label="Condition for Fire pump"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="fire_pump_replace_repair_when" aria-label="Replace or repair timing for Fire pump"></td>
                                 <td><textarea name="fire_pump_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Fire pump"></textarea></td>
                             </tr>
                             <tr>
@@ -1171,14 +1093,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="parking_garage_structure_quantity" placeholder="Amount" aria-label="Quantity for Parking garage structure">
-                                        <select name="parking_garage_structure_unit" aria-label="Unit for Parking garage structure">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="parking_garage_structure_unit" aria-label="Unit for Parking garage structure"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="parking_garage_structure_age" aria-label="Age for Parking garage structure"></td>
                                 <td><select name="parking_garage_structure_condition" aria-label="Condition for Parking garage structure"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="parking_garage_structure_replace_repair_when" aria-label="Replace or repair timing for Parking garage structure"></td>
                                 <td><textarea name="parking_garage_structure_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Parking garage structure"></textarea></td>
                             </tr>
                             <tr>
@@ -1187,14 +1106,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="garage_waterproofing_quantity" placeholder="Amount" aria-label="Quantity for Garage waterproofing / coating">
-                                        <select name="garage_waterproofing_unit" aria-label="Unit for Garage waterproofing / coating">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="garage_waterproofing_unit" aria-label="Unit for Garage waterproofing / coating"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="garage_waterproofing_age" aria-label="Age for Garage waterproofing / coating"></td>
                                 <td><select name="garage_waterproofing_condition" aria-label="Condition for Garage waterproofing / coating"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="garage_waterproofing_replace_repair_when" aria-label="Replace or repair timing for Garage waterproofing / coating"></td>
                                 <td><textarea name="garage_waterproofing_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Garage waterproofing / coating"></textarea></td>
                             </tr>
                             <tr>
@@ -1203,14 +1119,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="asphalt_roads_quantity" placeholder="Amount" aria-label="Quantity for Asphalt roads">
-                                        <select name="asphalt_roads_unit" aria-label="Unit for Asphalt roads">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="asphalt_roads_unit" aria-label="Unit for Asphalt roads"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="asphalt_roads_age" aria-label="Age for Asphalt roads"></td>
                                 <td><select name="asphalt_roads_condition" aria-label="Condition for Asphalt roads"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="asphalt_roads_replace_repair_when" aria-label="Replace or repair timing for Asphalt roads"></td>
                                 <td><textarea name="asphalt_roads_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Asphalt roads"></textarea></td>
                             </tr>
                             <tr>
@@ -1219,14 +1132,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="parking_lots_quantity" placeholder="Amount" aria-label="Quantity for Parking lots">
-                                        <select name="parking_lots_unit" aria-label="Unit for Parking lots">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="parking_lots_unit" aria-label="Unit for Parking lots"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="parking_lots_age" aria-label="Age for Parking lots"></td>
                                 <td><select name="parking_lots_condition" aria-label="Condition for Parking lots"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="parking_lots_replace_repair_when" aria-label="Replace or repair timing for Parking lots"></td>
                                 <td><textarea name="parking_lots_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Parking lots"></textarea></td>
                             </tr>
                             <tr>
@@ -1235,14 +1145,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="concrete_walks_quantity" placeholder="Amount" aria-label="Quantity for Concrete walks">
-                                        <select name="concrete_walks_unit" aria-label="Unit for Concrete walks">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="concrete_walks_unit" aria-label="Unit for Concrete walks"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="concrete_walks_age" aria-label="Age for Concrete walks"></td>
                                 <td><select name="concrete_walks_condition" aria-label="Condition for Concrete walks"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="concrete_walks_replace_repair_when" aria-label="Replace or repair timing for Concrete walks"></td>
                                 <td><textarea name="concrete_walks_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Concrete walks"></textarea></td>
                             </tr>
                             <tr>
@@ -1251,14 +1158,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="driveways_quantity" placeholder="Amount" aria-label="Quantity for Driveways">
-                                        <select name="driveways_unit" aria-label="Unit for Driveways">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="driveways_unit" aria-label="Unit for Driveways"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="driveways_age" aria-label="Age for Driveways"></td>
                                 <td><select name="driveways_condition" aria-label="Condition for Driveways"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="driveways_replace_repair_when" aria-label="Replace or repair timing for Driveways"></td>
                                 <td><textarea name="driveways_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Driveways"></textarea></td>
                             </tr>
                             <tr>
@@ -1267,14 +1171,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="curbs_quantity" placeholder="Amount" aria-label="Quantity for Curbs">
-                                        <select name="curbs_unit" aria-label="Unit for Curbs">
-                                            <option value="Count">Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="curbs_unit" aria-label="Unit for Curbs"><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="curbs_age" aria-label="Age for Curbs"></td>
                                 <td><select name="curbs_condition" aria-label="Condition for Curbs"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="curbs_replace_repair_when" aria-label="Replace or repair timing for Curbs"></td>
                                 <td><textarea name="curbs_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Curbs"></textarea></td>
                             </tr>
                             <tr>
@@ -1283,14 +1184,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="storm_drains_quantity" placeholder="Amount" aria-label="Quantity for Storm drains">
-                                        <select name="storm_drains_unit" aria-label="Unit for Storm drains">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="storm_drains_unit" aria-label="Unit for Storm drains"><option value="Count" selected>Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="storm_drains_age" aria-label="Age for Storm drains"></td>
                                 <td><select name="storm_drains_condition" aria-label="Condition for Storm drains"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="storm_drains_replace_repair_when" aria-label="Replace or repair timing for Storm drains"></td>
                                 <td><textarea name="storm_drains_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Storm drains"></textarea></td>
                             </tr>
                             <tr>
@@ -1299,14 +1197,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="drainage_systems_quantity" placeholder="Amount" aria-label="Quantity for Drainage systems">
-                                        <select name="drainage_systems_unit" aria-label="Unit for Drainage systems">
-                                            <option value="Count">Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="drainage_systems_unit" aria-label="Unit for Drainage systems"><option value="Count" selected>Count</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="drainage_systems_age" aria-label="Age for Drainage systems"></td>
                                 <td><select name="drainage_systems_condition" aria-label="Condition for Drainage systems"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="drainage_systems_replace_repair_when" aria-label="Replace or repair timing for Drainage systems"></td>
                                 <td><textarea name="drainage_systems_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Drainage systems"></textarea></td>
                             </tr>
                             <tr>
@@ -1315,14 +1210,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="retaining_walls_quantity" placeholder="Amount" aria-label="Quantity for Retaining walls">
-                                        <select name="retaining_walls_unit" aria-label="Unit for Retaining walls">
-                                            <option value="Count">Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="retaining_walls_unit" aria-label="Unit for Retaining walls"><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="retaining_walls_age" aria-label="Age for Retaining walls"></td>
                                 <td><select name="retaining_walls_condition" aria-label="Condition for Retaining walls"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="retaining_walls_replace_repair_when" aria-label="Replace or repair timing for Retaining walls"></td>
                                 <td><textarea name="retaining_walls_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Retaining walls"></textarea></td>
                             </tr>
                             <tr>
@@ -1331,14 +1223,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="gates_quantity" placeholder="Amount" aria-label="Quantity for Gates">
-                                        <select name="gates_unit" aria-label="Unit for Gates">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="gates_unit" aria-label="Unit for Gates"><option value="Count" selected>Count</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="gates_age" aria-label="Age for Gates"></td>
                                 <td><select name="gates_condition" aria-label="Condition for Gates"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="gates_replace_repair_when" aria-label="Replace or repair timing for Gates"></td>
                                 <td><textarea name="gates_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Gates"></textarea></td>
                             </tr>
                             <tr>
@@ -1347,14 +1236,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="access_controls_quantity" placeholder="Amount" aria-label="Quantity for Access controls">
-                                        <select name="access_controls_unit" aria-label="Unit for Access controls">
-                                            <option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="access_controls_unit" aria-label="Unit for Access controls"><option value="Count" selected>Count</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="access_controls_age" aria-label="Age for Access controls"></td>
                                 <td><select name="access_controls_condition" aria-label="Condition for Access controls"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="access_controls_replace_repair_when" aria-label="Replace or repair timing for Access controls"></td>
                                 <td><textarea name="access_controls_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Access controls"></textarea></td>
                             </tr>
                             <tr>
@@ -1363,14 +1249,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="pool_quantity" placeholder="Amount" aria-label="Quantity for Pool">
-                                        <select name="pool_unit" aria-label="Unit for Pool">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="pool_unit" aria-label="Unit for Pool"><option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="pool_age" aria-label="Age for Pool"></td>
                                 <td><select name="pool_condition" aria-label="Condition for Pool"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="pool_replace_repair_when" aria-label="Replace or repair timing for Pool"></td>
                                 <td><textarea name="pool_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Pool"></textarea></td>
                             </tr>
                             <tr>
@@ -1379,14 +1262,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="spa_quantity" placeholder="Amount" aria-label="Quantity for Spa">
-                                        <select name="spa_unit" aria-label="Unit for Spa">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="spa_unit" aria-label="Unit for Spa"><option value="Count" selected>Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="spa_age" aria-label="Age for Spa"></td>
                                 <td><select name="spa_condition" aria-label="Condition for Spa"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="spa_replace_repair_when" aria-label="Replace or repair timing for Spa"></td>
                                 <td><textarea name="spa_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Spa"></textarea></td>
                             </tr>
                             <tr>
@@ -1395,14 +1275,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="clubhouse_quantity" placeholder="Amount" aria-label="Quantity for Clubhouse">
-                                        <select name="clubhouse_unit" aria-label="Unit for Clubhouse">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="clubhouse_unit" aria-label="Unit for Clubhouse"><option value="Building" selected>Building</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="clubhouse_age" aria-label="Age for Clubhouse"></td>
                                 <td><select name="clubhouse_condition" aria-label="Condition for Clubhouse"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="clubhouse_replace_repair_when" aria-label="Replace or repair timing for Clubhouse"></td>
                                 <td><textarea name="clubhouse_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Clubhouse"></textarea></td>
                             </tr>
                             <tr>
@@ -1411,14 +1288,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="common_rooms_quantity" placeholder="Amount" aria-label="Quantity for Common rooms">
-                                        <select name="common_rooms_unit" aria-label="Unit for Common rooms">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="common_rooms_unit" aria-label="Unit for Common rooms"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Building">Building</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="common_rooms_age" aria-label="Age for Common rooms"></td>
                                 <td><select name="common_rooms_condition" aria-label="Condition for Common rooms"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="common_rooms_replace_repair_when" aria-label="Replace or repair timing for Common rooms"></td>
                                 <td><textarea name="common_rooms_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Common rooms"></textarea></td>
                             </tr>
                             <tr>
@@ -1427,14 +1301,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="hallways_quantity" placeholder="Amount" aria-label="Quantity for Hallways">
-                                        <select name="hallways_unit" aria-label="Unit for Hallways">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="hallways_unit" aria-label="Unit for Hallways"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="hallways_age" aria-label="Age for Hallways"></td>
                                 <td><select name="hallways_condition" aria-label="Condition for Hallways"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="hallways_replace_repair_when" aria-label="Replace or repair timing for Hallways"></td>
                                 <td><textarea name="hallways_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Hallways"></textarea></td>
                             </tr>
                             <tr>
@@ -1443,14 +1314,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="lobby_quantity" placeholder="Amount" aria-label="Quantity for Lobby">
-                                        <select name="lobby_unit" aria-label="Unit for Lobby">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="lobby_unit" aria-label="Unit for Lobby"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="lobby_age" aria-label="Age for Lobby"></td>
                                 <td><select name="lobby_condition" aria-label="Condition for Lobby"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="lobby_replace_repair_when" aria-label="Replace or repair timing for Lobby"></td>
                                 <td><textarea name="lobby_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Lobby"></textarea></td>
                             </tr>
                             <tr>
@@ -1459,14 +1327,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="common_finishes_quantity" placeholder="Amount" aria-label="Quantity for Common finishes">
-                                        <select name="common_finishes_unit" aria-label="Unit for Common finishes">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="common_finishes_unit" aria-label="Unit for Common finishes"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="common_finishes_age" aria-label="Age for Common finishes"></td>
                                 <td><select name="common_finishes_condition" aria-label="Condition for Common finishes"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="common_finishes_replace_repair_when" aria-label="Replace or repair timing for Common finishes"></td>
                                 <td><textarea name="common_finishes_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Common finishes"></textarea></td>
                             </tr>
                             <tr>
@@ -1475,14 +1340,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="landscaping_quantity" placeholder="Amount" aria-label="Quantity for Landscaping">
-                                        <select name="landscaping_unit" aria-label="Unit for Landscaping">
-                                            <option value="Count">Count</option><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="landscaping_unit" aria-label="Unit for Landscaping"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Acres">Acres</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="landscaping_age" aria-label="Age for Landscaping"></td>
                                 <td><select name="landscaping_condition" aria-label="Condition for Landscaping"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="landscaping_replace_repair_when" aria-label="Replace or repair timing for Landscaping"></td>
                                 <td><textarea name="landscaping_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Landscaping"></textarea></td>
                             </tr>
                             <tr>
@@ -1491,14 +1353,11 @@
                                 <td>
                                     <div class="quantity-cell">
                                         <input type="text" name="irrigation_quantity" placeholder="Amount" aria-label="Quantity for Irrigation">
-                                        <select name="irrigation_unit" aria-label="Unit for Irrigation">
-                                            <option value="Count">Count</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)" selected>Linear feet (LF)</option><option value="Building">Building</option><option value="Acres">Acres</option><option value="Other">Other</option>
-                                        </select>
+                                        <select name="irrigation_unit" aria-label="Unit for Irrigation"><option value="Square feet (SF)" selected>Square feet (SF)</option><option value="Other">Other</option></select>
                                     </div>
                                 </td>
                                 <td><input type="text" name="irrigation_age" aria-label="Age for Irrigation"></td>
                                 <td><select name="irrigation_condition" aria-label="Condition for Irrigation"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="irrigation_replace_repair_when" aria-label="Replace or repair timing for Irrigation"></td>
                                 <td><textarea name="irrigation_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems for Irrigation"></textarea></td>
                             </tr>
 <tr>
@@ -1509,14 +1368,11 @@
                                 <td>
     <div class="quantity-cell">
         <input type="text" name="other_1_quantity" placeholder="Amount" aria-label="Quantity for other major item 1">
-        <select name="other_1_unit" aria-label="Unit for other major item 1">
-            <option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Other">Other</option>
-        </select>
+        <select name="other_1_unit" aria-label="Unit for other major item 1"><option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Building">Building</option><option value="Other">Other</option></select>
     </div>
 </td>
                                 <td><input type="text" name="other_1_age"></td>
                                 <td><select name="other_1_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="other_1_replace_repair_when"></td>
                                 <td><textarea name="other_1_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems"></textarea></td>
                             </tr>
 
@@ -1528,14 +1384,11 @@
                                 <td>
     <div class="quantity-cell">
         <input type="text" name="other_2_quantity" placeholder="Amount" aria-label="Quantity for other major item 2">
-        <select name="other_2_unit" aria-label="Unit for other major item 2">
-            <option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Other">Other</option>
-        </select>
+        <select name="other_2_unit" aria-label="Unit for other major item 2"><option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Building">Building</option><option value="Other">Other</option></select>
     </div>
 </td>
                                 <td><input type="text" name="other_2_age"></td>
                                 <td><select name="other_2_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="other_2_replace_repair_when"></td>
                                 <td><textarea name="other_2_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems"></textarea></td>
                             </tr>
 
@@ -1547,14 +1400,11 @@
                                 <td>
     <div class="quantity-cell">
         <input type="text" name="other_3_quantity" placeholder="Amount" aria-label="Quantity for other major item 3">
-        <select name="other_3_unit" aria-label="Unit for other major item 3">
-            <option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Other">Other</option>
-        </select>
+        <select name="other_3_unit" aria-label="Unit for other major item 3"><option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Building">Building</option><option value="Other">Other</option></select>
     </div>
 </td>
                                 <td><input type="text" name="other_3_age"></td>
                                 <td><select name="other_3_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="other_3_replace_repair_when"></td>
                                 <td><textarea name="other_3_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems"></textarea></td>
                             </tr>
 
@@ -1566,14 +1416,11 @@
                                 <td>
     <div class="quantity-cell">
         <input type="text" name="other_4_quantity" placeholder="Amount" aria-label="Quantity for other major item 4">
-        <select name="other_4_unit" aria-label="Unit for other major item 4">
-            <option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Other">Other</option>
-        </select>
+        <select name="other_4_unit" aria-label="Unit for other major item 4"><option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Building">Building</option><option value="Other">Other</option></select>
     </div>
 </td>
                                 <td><input type="text" name="other_4_age"></td>
                                 <td><select name="other_4_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="other_4_replace_repair_when"></td>
                                 <td><textarea name="other_4_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems"></textarea></td>
                             </tr>
 
@@ -1585,14 +1432,11 @@
                                 <td>
     <div class="quantity-cell">
         <input type="text" name="other_5_quantity" placeholder="Amount" aria-label="Quantity for other major item 5">
-        <select name="other_5_unit" aria-label="Unit for other major item 5">
-            <option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Other">Other</option>
-        </select>
+        <select name="other_5_unit" aria-label="Unit for other major item 5"><option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Building">Building</option><option value="Other">Other</option></select>
     </div>
 </td>
                                 <td><input type="text" name="other_5_age"></td>
                                 <td><select name="other_5_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="other_5_replace_repair_when"></td>
                                 <td><textarea name="other_5_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems"></textarea></td>
                             </tr>
 
@@ -1604,14 +1448,11 @@
                                 <td>
     <div class="quantity-cell">
         <input type="text" name="other_6_quantity" placeholder="Amount" aria-label="Quantity for other major item 6">
-        <select name="other_6_unit" aria-label="Unit for other major item 6">
-            <option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Other">Other</option>
-        </select>
+        <select name="other_6_unit" aria-label="Unit for other major item 6"><option value="">Unit</option><option value="Square feet (SF)">Square feet (SF)</option><option value="Linear feet (LF)">Linear feet (LF)</option><option value="Count">Count</option><option value="Acres">Acres</option><option value="Building">Building</option><option value="Other">Other</option></select>
     </div>
 </td>
                                 <td><input type="text" name="other_6_age"></td>
                                 <td><select name="other_6_condition"><option value="">Select</option><option>Good</option><option>OK</option><option>Poor</option><option>Unknown</option></select></td>
-                                <td><input type="text" name="other_6_replace_repair_when"></td>
                                 <td><textarea name="other_6_notes" rows="2" placeholder="Notes / known problems" aria-label="Notes and known problems"></textarea></td>
                             </tr>
                         </tbody>
@@ -1879,4 +1720,3 @@
 
 </body>
 </html>
-
