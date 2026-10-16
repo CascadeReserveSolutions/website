@@ -1095,12 +1095,34 @@ footer {
 }
 
 .funding-summary {
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
-    gap: 0;
-    padding: 26px 0 28px;
-    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.funding-summary > div {
+    min-width: 0;
+    text-align: left;
+}
+
+.funding-summary span {
+    min-height: 2.8em;
+}
+
+.funding-summary strong {
+    display: block;
+    margin-top: 5px;
+    margin-left: 0;
+}
+
+.funding-summary small {
+    display: block;
+    margin-top: 8px;
+    color: #52636D;
+    font-size: 0.85rem;
+    line-height: 1.6;
 }
 
 .funding-summary > div {
