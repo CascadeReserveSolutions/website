@@ -1095,8 +1095,12 @@ footer {
 }
 
 .funding-summary {
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
+    gap: 0;
+    padding: 26px 0 28px;
+    width: 100%;
 }
 
 .funding-summary > div {
