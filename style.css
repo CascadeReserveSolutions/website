@@ -1128,3 +1128,316 @@ footer {
         min-height: 0;
     }
 }
+
+/* =========================================================
+   HERO + RESERVE DASHBOARD REFINEMENTS
+   Append this section to the end of style.css
+========================================================= */
+
+.hero {
+    min-height: 0;
+}
+
+.hero-content {
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    gap: clamp(36px, 4.5vw, 64px);
+    align-items: center;
+    padding-top: 84px;
+    padding-bottom: 84px;
+}
+
+.hero-copy {
+    min-width: 0;
+}
+
+.hero h1 {
+    max-width: 620px;
+    margin-bottom: 24px;
+    font-size: clamp(3.15rem, 5.1vw, 5rem);
+    line-height: 1.02;
+    letter-spacing: -0.058em;
+    overflow-wrap: normal;
+    text-wrap: balance;
+}
+
+.hero-text {
+    max-width: 540px;
+    margin-bottom: 28px;
+    font-size: 1.08rem;
+    line-height: 1.75;
+}
+
+.price-callout {
+    margin-bottom: 10px;
+    color: #163F5C;
+    font-size: 0.98rem;
+}
+
+.hero-buttons {
+    margin-top: 0;
+}
+
+.reserve-dashboard {
+    width: 100%;
+    max-width: 620px;
+    justify-self: end;
+    padding: clamp(26px, 2.7vw, 36px);
+    border-radius: 14px;
+    box-shadow: 0 22px 55px rgba(16, 47, 42, 0.09);
+}
+
+.dashboard-header {
+    align-items: center;
+    padding-bottom: 22px;
+}
+
+.dashboard-header h3 {
+    font-size: 1.3rem;
+    line-height: 1.35;
+}
+
+.status {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.funding-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    padding: 26px 0 28px;
+}
+
+.funding-summary > div {
+    min-width: 0;
+    align-items: center;
+    text-align: center;
+    gap: 7px;
+}
+
+.funding-summary span {
+    min-height: 2.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #667780;
+    font-size: 0.76rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.funding-summary strong {
+    margin-top: 0;
+    color: #163F5C;
+    font-size: clamp(1.65rem, 2.1vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    white-space: nowrap;
+}
+
+.funding-summary small {
+    max-width: 220px;
+    margin-top: 2px;
+    color: #52636D;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.component-list {
+    border-top: 1px solid #DCE5E9;
+}
+
+.component {
+    min-height: 76px;
+    padding: 17px 0;
+}
+
+.component div {
+    min-width: 0;
+    gap: 4px;
+}
+
+.component div strong {
+    color: #163F5C;
+    font-size: 0.96rem;
+    line-height: 1.4;
+}
+
+.component span {
+    color: #71808A;
+    font-size: 0.8rem;
+    line-height: 1.45;
+}
+
+.component > strong {
+    flex-shrink: 0;
+    color: #28706C;
+    font-size: 0.98rem;
+}
+
+.dashboard-footer {
+    gap: 14px;
+    padding-top: 20px;
+}
+
+.dashboard-footer span {
+    font-size: 0.76rem;
+}
+
+.dashboard-footer strong {
+    flex-shrink: 0;
+    font-size: 0.68rem;
+    text-align: right;
+}
+
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1000px) and (min-width: 801px) {
+    .hero-content {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 30px;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 5vw, 4.2rem);
+    }
+
+    .reserve-dashboard {
+        padding: 26px;
+    }
+
+    .funding-summary {
+        gap: 12px;
+    }
+
+    .funding-summary span {
+        font-size: 0.72rem;
+    }
+
+    .funding-summary small {
+        font-size: 0.77rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+    .hero {
+        min-height: 0;
+    }
+
+    .hero-content {
+        display: block;
+        padding: 66px 24px 72px;
+    }
+
+    .hero h1 {
+        max-width: 620px;
+        margin-bottom: 22px;
+        font-size: clamp(2.75rem, 10.5vw, 4.2rem);
+        line-height: 1.03;
+    }
+
+    .hero-text {
+        margin-bottom: 24px;
+        font-size: 1.04rem;
+    }
+
+    .price-callout {
+        margin-top: 28px;
+    }
+
+    .reserve-dashboard {
+        max-width: 620px;
+        margin: 42px auto 0;
+        padding: 26px 24px;
+    }
+
+    .funding-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .funding-summary span {
+        min-height: 3.2em;
+        font-size: 0.74rem;
+    }
+
+    .funding-summary strong {
+        font-size: clamp(1.5rem, 6vw, 1.85rem);
+    }
+
+    .funding-summary small {
+        font-size: 0.78rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 54px 20px 60px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.55rem, 11.5vw, 3.4rem);
+    }
+
+    .reserve-dashboard {
+        padding: 22px 18px;
+    }
+
+    .dashboard-header {
+        gap: 12px;
+    }
+
+    .dashboard-header h3 {
+        font-size: 1.12rem;
+    }
+
+    .funding-summary {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .funding-summary span {
+        min-height: 3.6em;
+        font-size: 0.7rem;
+    }
+
+    .funding-summary strong {
+        font-size: 1.45rem;
+    }
+
+    .funding-summary small {
+        font-size: 0.73rem;
+    }
+
+    .component {
+        gap: 12px;
+    }
+
+    .component div strong {
+        font-size: 0.9rem;
+    }
+
+    .component > strong {
+        font-size: 0.9rem;
+    }
+
+    .dashboard-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .dashboard-footer strong {
+        text-align: left;
+    }
+}
