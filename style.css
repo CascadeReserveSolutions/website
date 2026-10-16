@@ -117,12 +117,13 @@ nav {
 }
 
 .hero h1 {
-    max-width: 800px;
-    margin-bottom: 28px;
+    max-width: 540px;
+    margin-bottom: 24px;
     color: #1D2B34;
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    line-height: 1.02;
-    letter-spacing: -0.055em;
+    font-size: clamp(2.8rem, 4.2vw, 4.2rem);
+    line-height: 1.06;
+    letter-spacing: -0.05em;
+    text-wrap: balance;
 }
 
 .hero-text {
@@ -1107,8 +1108,16 @@ footer {
 }
 
 .funding-summary strong {
-    display: block;
-    margin-top: 5px;
+    display: inline-block;
+    margin-top: 2px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: #163F5C;
+    background: #E8F1F2;
+    font-size: clamp(1.65rem, 2.1vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    white-space: nowrap;
 }
 
 .funding-summary small {
