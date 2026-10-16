@@ -1075,3 +1075,56 @@ footer {
     font-size: 1.1rem;
     line-height: 1.8;
 }
+
+
+/* =========================
+   WIDER RESERVE DASHBOARD
+========================= */
+
+@media (min-width: 801px) {
+    .hero-content {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 50px;
+    }
+}
+
+.reserve-dashboard {
+    width: 100%;
+    min-width: 0;
+}
+
+.funding-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+}
+
+.funding-summary > div {
+    min-width: 0;
+}
+
+.funding-summary span {
+    min-height: 2.8em;
+}
+
+.funding-summary strong {
+    display: block;
+    margin-top: 5px;
+}
+
+.funding-summary small {
+    display: block;
+    margin-top: 8px;
+    color: #52636D;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+    .funding-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .funding-summary span {
+        min-height: 0;
+    }
+}
