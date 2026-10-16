@@ -6,6 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cascade Reserve Solutions</title>
     <meta name="description" content="Professional reserve study consulting and property condition assessments for community associations throughout the Puget Sound.">
+
+    <style>
+        /* Keep the two funding figures aligned side by side and visually balanced. */
+        .funding-summary {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+            text-align: center;
+            align-items: start;
+        }
+
+        .funding-summary > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 0;
+        }
+
+        .funding-summary span {
+            display: block;
+            min-height: 2.8em;
+        }
+
+        .funding-summary strong {
+            display: block;
+            font-size: 2rem;
+            line-height: 1.2;
+            margin: 12px 0;
+        }
+
+        .funding-summary small {
+            display: block;
+            line-height: 1.5;
+        }
+
+        .component-lifespan {
+            display: block;
+        }
+
+        @media (max-width: 480px) {
+            .funding-summary {
+                gap: 12px;
+            }
+
+            .funding-summary strong {
+                font-size: 1.55rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -54,6 +103,7 @@
                             <span class="dashboard-label">SAMPLE RESERVE PLAN</span>
                             <h3>Funding Recommendation</h3>
                         </div>
+
                         <span class="status">ILLUSTRATIVE</span>
                     </div>
 
@@ -75,25 +125,28 @@
                         <div class="component">
                             <div>
                                 <strong>Roofing</strong>
-                                <span>Sample component cost</span>
+                                <span class="component-lifespan">9 years remaining</span>
                             </div>
-                            <strong>$285,000</strong>
+
+                            <strong>$320,000</strong>
                         </div>
 
                         <div class="component">
                             <div>
                                 <strong>Exterior Paint</strong>
-                                <span>Sample component cost</span>
+                                <span class="component-lifespan">4 years remaining</span>
                             </div>
-                            <strong>$96,000</strong>
+
+                            <strong>$90,000</strong>
                         </div>
 
                         <div class="component">
                             <div>
-                                <strong>Paving</strong>
-                                <span>Sample component cost</span>
+                                <strong>Gutters and Downspouts</strong>
+                                <span class="component-lifespan">4 years remaining</span>
                             </div>
-                            <strong>$174,000</strong>
+
+                            <strong>$55,000</strong>
                         </div>
                     </div>
 
@@ -219,6 +272,7 @@
                 <div class="about-intro">
                     <p class="eyebrow">ABOUT US</p>
                     <h2>Experience grounded in real property.</h2>
+
                     <p class="about-lead">
                         Reserve planning is ultimately about understanding
                         the physical assets a community depends on.
