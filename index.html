@@ -8,11 +8,11 @@
     <meta name="description" content="Professional reserve study consulting and property condition assessments for community associations throughout the Puget Sound.">
 
     <style>
-        /* Keep the two funding figures aligned side by side and visually balanced. */
+        /* Three funding figures remain balanced on desktop and adapt on smaller screens. */
         .funding-summary {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
             text-align: center;
             align-items: start;
         }
@@ -63,15 +63,23 @@
             text-underline-offset: 4px;
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 700px) {
             .funding-summary {
-                gap: 12px;
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .funding-summary span {
+                min-height: 0;
             }
 
             .funding-summary strong {
-                font-size: 1.55rem;
+                font-size: 1.75rem;
+                margin: 8px 0;
             }
+        }
 
+        @media (max-width: 480px) {
             .nav-links .admin-link {
                 margin-left: 0;
             }
@@ -131,13 +139,19 @@
                     </div>
 
                     <div class="dashboard-summary funding-summary">
-                        <div>
+                        <div class="current-funding">
+                            <span>Current Annual Contribution</span>
+                            <strong>$40,000</strong>
+                            <small>Existing Funding Level</small>
+                        </div>
+
+                        <div class="baseline-funding">
                             <span>Baseline Annual Contribution</span>
                             <strong>$63,400</strong>
                             <small>Baseline funding approach</small>
                         </div>
 
-                        <div>
+                        <div class="recommended-funding">
                             <span>Recommended Annual Contribution</span>
                             <strong>$80,000</strong>
                             <small>Designed to reduce underfunding risk</small>
@@ -165,11 +179,11 @@
 
                         <div class="component">
                             <div>
-                                <strong>Gutters and Downspouts</strong>
-                                <span class="component-lifespan">4 years remaining</span>
+                                <strong>Street Overlay</strong>
+                                <span class="component-lifespan">2 years remaining</span>
                             </div>
 
-                            <strong>$55,000</strong>
+                            <strong>$140,000</strong>
                         </div>
                     </div>
 

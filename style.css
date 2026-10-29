@@ -1126,6 +1126,8 @@ footer {
     line-height: 1.2;
     letter-spacing: -0.025em;
     white-space: nowrap;
+
+    
 }
 
 .funding-summary small {
@@ -1137,6 +1139,8 @@ footer {
     line-height: 1.5;
     text-wrap: balance;
 }
+
+
 
 @media (max-width: 480px) {
     .funding-summary {
@@ -1153,3 +1157,50 @@ footer {
     }
 }
 
+
+/* =========================
+   FUNDING SUMMARY COLOR ACCENTS
+   Add this block at the very end of style.css.
+   It overrides the existing two-column funding layout and colors
+   the three contribution amounts without changing the rest of the site.
+========================= */
+
+.funding-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.funding-summary > div {
+    min-width: 0;
+}
+
+.funding-summary .current-funding strong {
+    color: #8C3833;
+    background: #F8E8E6;
+}
+
+.funding-summary .baseline-funding strong {
+    color: #805F19;
+    background: #F8F0DB;
+}
+
+.funding-summary .recommended-funding strong {
+    color: #176456;
+    background: #E3F1EC;
+}
+
+/* Stack the options on narrow screens to keep labels and amounts readable. */
+@media (max-width: 700px) {
+    .funding-summary {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .funding-summary span {
+        min-height: 0;
+    }
+
+    .funding-summary small {
+        max-width: none;
+    }
+}
